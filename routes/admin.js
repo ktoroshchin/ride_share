@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 const express = require('express');
 const router = express.Router();
 
@@ -7,16 +9,12 @@ module.exports = (knex) => {
     knex("reservations")
       .select("*")
       .then((data) => {
-        console.log(data);
-        res.send(data);
+        res.json(data);
       })
       .catch((err) => {
         console.log(err);
         throw err;
-      })
-      .finally(() => {
       });
   });
   return router;
 };
-

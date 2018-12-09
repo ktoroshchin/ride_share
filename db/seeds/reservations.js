@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const faker = require("faker");
 
 exports.seed = function(knex, Promise) {
@@ -17,6 +18,8 @@ exports.seed = function(knex, Promise) {
             departure_date: faker.date.future(),
             departure_time: Math.round(faker.random.number()/1000),
             number_of_people: Math.round(faker.random.number()/1000),
+            message: faker.lorem.lines(),
+            driver_name: faker.name.firstName(),
             driver_id: 1
           }),
 
@@ -29,7 +32,9 @@ exports.seed = function(knex, Promise) {
             departure_date: faker.date.future(),
             departure_time: Math.round(faker.random.number()/1000),
             number_of_people: Math.round(faker.random.number()/1000),
-            driver_id: 2
+            message: faker.lorem.lines(),
+            driver_name: faker.name.firstName(),
+            driver_id: 1
           }),
 
           knex("reservations").insert({
@@ -41,7 +46,9 @@ exports.seed = function(knex, Promise) {
             departure_date: faker.date.future(),
             departure_time: Math.round(faker.random.number()/1000),
             number_of_people: Math.round(faker.random.number()/1000),
-            driver_id: 3
+            message: faker.lorem.lines(),
+            driver_name: faker.name.firstName(),
+            driver_id: 1
           }),
 
           knex("reservations").insert({
@@ -53,7 +60,9 @@ exports.seed = function(knex, Promise) {
             departure_date: faker.date.future(),
             departure_time: Math.round(faker.random.number()/1000),
             number_of_people: Math.round(faker.random.number()/1000),
-            driver_id: 4
+            message: faker.lorem.lines(),
+            driver_name: faker.name.firstName(),
+            driver_id: 1
           })
 
         ]);

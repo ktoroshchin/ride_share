@@ -13,8 +13,10 @@ exports.up = function(knex, Promise) {
       table.string("departure_time").notNullable();
       table.string("number_of_people").notNullable();
       table.boolean('is_confirmed').notNullable().defaultTo(false);
+      table.string("message", 1000);
+      table.string("driver_name", 1000);
       table.integer("driver_id");
-      table.timestamp('created_at').defaultTo(knex.fn.now())
+      table.timestamp('created_at').defaultTo(knex.fn.now());
 
       table
         .foreign("driver_id")
@@ -22,7 +24,7 @@ exports.up = function(knex, Promise) {
         .on("drivers")
         .onDelete("cascade");
     })
-  ])
+  ]);
 };
 
 exports.down = function(knex, Promise) {

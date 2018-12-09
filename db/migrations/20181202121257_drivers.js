@@ -8,7 +8,7 @@ exports.up = function(knex, Promise) {
       table.string("password").notNullable();
       table.string("vehicle_type");
       table.string("email").notNullable();
-      table.timestamp('created_at').defaultTo(knex.fn.now())
+      table.timestamp('created_at').defaultTo(knex.fn.now());
     })
   ]);
 };

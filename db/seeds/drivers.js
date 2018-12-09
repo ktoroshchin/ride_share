@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const faker = require("faker");
 
 exports.seed = function(knex, Promise) {
@@ -14,33 +15,7 @@ exports.seed = function(knex, Promise) {
             password: faker.internet.password(),
             vehicle_type: faker.random.number(),
             email: faker.internet.email()
-
-          }),
-
-          knex("drivers").insert({
-            first_name: faker.name.firstName(),
-            last_name: faker.name.lastName(),
-            password: faker.internet.password(),
-            vehicle_type: faker.random.number(),
-            email: faker.internet.email()
-          }),
-
-          knex("drivers").insert({
-            first_name: faker.name.firstName(),
-            last_name: faker.name.lastName(),
-            password: faker.internet.password(),
-            vehicle_type: faker.random.number(),
-            email: faker.internet.email()
-          }),
-
-          knex("drivers").insert({
-            first_name: faker.name.firstName(),
-            last_name: faker.name.lastName(),
-            password: faker.internet.password(),
-            vehicle_type: faker.random.number(),
-            email: faker.internet.email()
           })
-
         ]);
       })
   ]);
