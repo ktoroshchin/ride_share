@@ -1,11 +1,16 @@
+/*jshint esversion: 6 */
+
 import React, { Component } from 'react';
-import SingleReservation from './SingleReservation'
+import axios from 'axios';
+import ReservationsRender from './ReservationsRender'
+
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
-        <SingleReservation/>
+        <ReservationsRender/>
       </div>
     );
   }
