@@ -11,5 +11,5 @@ module.exports = (knex) => {
         res.send(data);
       });
     });
-    return router;
+      return router;
 };
