@@ -13,7 +13,7 @@ class ReservationsRender extends Component {
   componentDidMount() {
     axios.get('/admin').then(response => {
       this.setState({
-        reservations: response.data.filter(driver => driver.driver_id === 1 || driver.driver_id === null )
+        reservations: response.data.filter(driver => driver.driver_id === 1 )
       })
     })
   }

@@ -8,6 +8,7 @@ const ENV = process.env.ENV || 'development';
 const express = require('express');
 const adminRoute = require('./routes/admin');
 const homeRoute = require('./routes/home');
+const registerRoute = require('./routes/register')
 
 const knexConfig = require('./knexfile');
 const knexLogger = require('knex-logger');
@@ -25,6 +26,7 @@ app.use(knexLogger(knex));
 // Mount all resource routes
 app.use('/admin', adminRoute(knex));
 app.use('/home', homeRoute(knex));
+app.use('/register', registerRoute(knex));
 
 
 app.listen(PORT, () => {

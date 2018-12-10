@@ -9,7 +9,7 @@ module.exports = (knex) => {
     knex("reservations")
       .select("*")
       .then((data) => {
-        res.json(data);
+        res.send(data);
       })
       .catch((err) => {
         console.log(err);
