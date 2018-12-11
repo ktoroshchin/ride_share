@@ -2,19 +2,51 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
+import Cookies from 'universal-cookie';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Container} from 'reactstrap';
+
 import ReservationsRender from './ReservationsRender'
 import ReservationForm from './ReservationForm'
 import Register from './Register'
+import Login from './Login'
+
+
+const cookies = new Cookies();
+const setUserID = function(userID) {
+  cookies.set('userID', userID, {path: '/'})
+}
+const setUserFirstName = function(userFirstName) {
+  cookies.set('userFirstName', userFirstName, {path: '/'});
+}
+const setUserLastName = function(userLastName) {
+  cookies.set('userLastName', userLastName, {path: '/'});
+}
+const getUserID = function() {
+  return cookies.get('userID');
+}
+const deleteUser = function() {
+  cookies.remove('userID');
+  cookies.remove('userFirstName');
+  cookies.remove('userLastName');
+}
+
 
 class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Register/>
-        <ReservationForm/>
-        <ReservationsRender/>
-      </div>
+      <div>
+      <Router>
+        <div className="App">
+          <Container className="mainContainer p-0">
+            <Route exact path="/" component={ReservationForm}/>
+            <Route path="/register" render={() => <Register setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserID={getUserID}/>} />
+            <Route path="/my-reservations" render={() => <ReservationsRender  userID={getUserID}/>} />
+          </Container>
+        </div>
+      </Router>
+    </div>
     );
   }
 }
