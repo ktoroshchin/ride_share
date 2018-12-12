@@ -10,6 +10,7 @@ import ReservationsRender from './ReservationsRender'
 import ReservationForm from './ReservationForm'
 import Register from './Register'
 import Login from './Login'
+import Confirmation from './Confirmation'
 
 
 const cookies = new Cookies();
@@ -49,8 +50,7 @@ class App extends Component {
             <Route path="/register" render={() => <Register setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserID={getUserID}/>} />
             <Route path="/login" render={() => <Login setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserName={getUserName} getUserID={getUserID}/>} />
             <Route path="/my-reservations" render={() => <ReservationsRender  getUserName={getUserName}/>} />
-
-          </Container>
+        </Container>
         </div>
       </Router>
     </div>

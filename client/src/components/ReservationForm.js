@@ -2,7 +2,9 @@
 /*jshint esversion: 6 */
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Redirect } from 'react-router';
 import axios from 'axios';
+import Confirmation from './Confirmation'
 
 const formStyle ={
   width: '100%',
@@ -25,16 +27,29 @@ export default class RegistrationForm extends Component {
     phone_number: '',
     email: '',
     number_of_people: '',
-    message: ''
+    message: '',
+    redirect: false,
   };
 
   onChangeItem = (event) => {
     const target = event.target;
     const name = target.name;
 
+    if(target.value.trim() === ""){
+      this.setState({
+        [name]: null
+      })
+    }
+
     this.setState({
-      [name]: target.value
+      [name]: target.value,
     });
+  }
+
+  handleMesssage = (event) => {
+    this.setState({
+      message: event.target.value
+    })
   }
 
   handleSubmit = (event) => {
@@ -42,24 +57,34 @@ export default class RegistrationForm extends Component {
     const { driver_name,departure_date,first_name,
       leaving_from,going_to,departure_time,phone_number,email,
       number_of_people,message } = this.state;
+      if(!this.state.driver_name || !this.state.departure_date || !this.state.first_name ||
+      !this.state.leaving_from || !this.state.going_to || !this.state.departure_time || !this.state.phone_number || !this.state.email ||
+      !this.state.number_of_people){
+        alert("All fields required to make reservation, EXCEPT 'Message to Driver'")
+      } else {
 
       axios.post('/home', { driver_name: driver_name, departure_date: departure_date,
          first_name: first_name, leaving_from: leaving_from, going_to: going_to,
          departure_time: departure_time, phone_number: phone_number, email: email,
          number_of_people: number_of_people, message: message}
       ).then( data  => {
-
         console.log(data.data);
       })
-      .catch(function(error){
-        console.log(error);
+      this.setState({
+        redirect: true
       })
+    }
     }
 
 
 
 
   render() {
+    const { redirect } = this.state
+    const { driver_name, departure_date, departure_time, going_to, leaving_from } = this.state
+    if( redirect ){
+      return  <Confirmation driver_name={driver_name} departure_date={departure_date} departure_time={departure_time} going_to={going_to} leaving_from={leaving_from}/>
+    }
 
     return(
       <div className="container">
@@ -144,13 +169,13 @@ export default class RegistrationForm extends Component {
                 <FormGroup>
                   <Label for="exampleDate">Message to Driver</Label>
                   <Input type="textarea" name="message" id="exampleDate" placeholder=""
-                    onChange={this.onChangeItem} />
+                    onChange={this.handleMesssage} />
                 </FormGroup>
                 <button style={buttonStyle} type="submit" className="btn btn-success" color="primary">Submit</button>
               </Form>
-
         </div>
       </div>
     );
   }
 }
+
