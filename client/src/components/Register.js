@@ -86,17 +86,9 @@ export default class Register extends Component {
     setUser = (data) => {
       this.props.setUserFirstName(this.state.first_name);
       this.props.setUserLastName(this.state.last_name);
-      this.props.setUserID(data.data.id);
+      this.props.setUserID(data.data[0].id);
       this.setState({redirect:true});
     }
-
-    renderRedirect = () => {
-      if (this.state.redirect) {
-        return <Redirect to='/my-reservations'/>
-      }
-    }
-
-
 
   handleSubmit = (event) => {
     event.preventDefault()
@@ -104,17 +96,18 @@ export default class Register extends Component {
 
     axios.post('/register', { email: email, password: password, first_name: first_name, last_name: last_name,
     vehicle_type: vehicle_type }).then(data => {
-      console.log(data.id)
+      this.setUser(data)
       })
     }
 
 
 
   render() {
-    const { getUserID } = this.props;
+    const { redirect } = this.state;
 
-
-
+    if( redirect ) {
+      return <Redirect to='/my-reservations'/>
+    }
     return(
     <div className="container">
       <Form onSubmit={this.handleSubmit}>
@@ -131,23 +124,21 @@ export default class Register extends Component {
         </FormGroup>
         <FormGroup>
           <Label for="firstName">First Name</Label>
-          <Input type="text" name="first_name" id="name" placeholder=""
+          <Input type="text" name="first_name" id="first_name" placeholder=""
           onChange={this.handleFirstName}/>
         </FormGroup>
         <FormGroup>
           <Label for="lastName">Last Name</Label>
-          <Input type="text" name="last_name" id="name" placeholder=""
+          <Input type="text" name="last_name" id="last_name" placeholder=""
           onChange={this.handleLastName}/>
         </FormGroup>
         <FormGroup>
           <Label for="vehicleType">Vehicle Type</Label>
-          <Input type="text" name="vehicle_type" id="name" placeholder=""
+          <Input type="text" name="vehicle_type" id="vehicle_type" placeholder=""
           onChange={this.handleVehicleType}/>
         </FormGroup>
       <button type="submit" className="btn btn-success" color="primary">Submit</button>
       </Form>
-
-
     </div>
     )
 

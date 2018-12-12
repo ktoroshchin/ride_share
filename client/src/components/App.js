@@ -25,6 +25,11 @@ const setUserLastName = function(userLastName) {
 const getUserID = function() {
   return cookies.get('userID');
 }
+const getUserName = function() {
+  return cookies.get('userFirstName')
+}
+
+
 const deleteUser = function() {
   cookies.remove('userID');
   cookies.remove('userFirstName');
@@ -42,7 +47,9 @@ class App extends Component {
           <Container className="mainContainer p-0">
             <Route exact path="/" component={ReservationForm}/>
             <Route path="/register" render={() => <Register setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserID={getUserID}/>} />
-            <Route path="/my-reservations" render={() => <ReservationsRender  userID={getUserID}/>} />
+            <Route path="/login" render={() => <Login setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserName={getUserName} getUserID={getUserID}/>} />
+            <Route path="/my-reservations" render={() => <ReservationsRender  getUserName={getUserName}/>} />
+
           </Container>
         </div>
       </Router>
