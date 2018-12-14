@@ -1,9 +1,10 @@
 
 /*jshint esversion: 6 */
 import React, { Component } from "react";
-import { Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import axios from 'axios';
 import { Redirect } from 'react-router'
+import { Link } from 'react-router-dom'
 
 export default class Register extends Component {
 
@@ -138,7 +139,8 @@ export default class Register extends Component {
           onChange={this.handleVehicleType}/>
         </FormGroup>
       <button type="submit" className="btn btn-success" color="primary">Submit</button>
-      </Form>
+      <Button tag={Link} to="/" type="cancel" className="btn btn-danger" color="primary">Cancel</Button>
+    </Form>
     </div>
     )
 

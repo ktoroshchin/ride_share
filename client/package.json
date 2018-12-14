@@ -31,7 +31,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "node-sass": "^4.11.0",
-    "sass-loader": "^7.1.0"
+    "css-loader": "^2.0.1",
+    "style-loader": "^0.23.1"
   }
 }

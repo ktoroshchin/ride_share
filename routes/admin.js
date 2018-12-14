@@ -8,6 +8,7 @@ module.exports = (knex) => {
   router.get('/', (req, res) => {
     knex("reservations")
       .select("*")
+      .orderBy("departure_date","asc")
       .then((data) => {
         res.send(data);
       })

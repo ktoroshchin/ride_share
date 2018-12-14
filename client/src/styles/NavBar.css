@@ -1,0 +1,24 @@
+.top-nav {
+  background-color: #edc7b7;
+}
+
+.navbar-brand{
+  color: #123c69!important;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.navbar-toggler{
+  background-color: #123c69 ;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+  color: white;
+  background-color: #123c69;
+  border-radius: 5px;
+}
+
+.greeting{
+  color: #123c69;
+  font-weight: bold;
+}

@@ -73,7 +73,7 @@ export default class Login extends Component {
         }
       })
       if (arr.indexOf(email) === -1 || arr.indexOf(password) === -1) {
-         alert("element doesn't exist");
+         alert("WRONG LOGIN or PASSWORD");
     }
   })
   }

@@ -1,0 +1,17 @@
+@import "./SingleReservationRender.css";
+@import "./NavBar.css";
+@import "./ReservationForm.css";
+body {
+  margin: 0;
+  padding: 0;
+  background-color:#eee2dc;
+  font-family: -apple-system, Amaranth, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+

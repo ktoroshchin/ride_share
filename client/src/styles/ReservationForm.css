@@ -1,0 +1,16 @@
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.reservation-submit{
+  background-color: #123c69;
+  color: white;
+  font-weight: 600;
+}
+.burger-menu{
+  background-color: #123c69
+}

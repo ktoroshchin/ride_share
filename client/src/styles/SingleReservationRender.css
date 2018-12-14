@@ -1,0 +1,13 @@
+.btn.btn-link{
+ width: 100%;
+ text-decoration: none;
+ color: orange;
+}
+
+.accordion{
+  margin-top: 5px;
+}
+
+.card{
+  background-color: grey;
+}

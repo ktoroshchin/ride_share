@@ -6,14 +6,14 @@ import { Redirect } from 'react-router';
 import axios from 'axios';
 import Confirmation from './Confirmation'
 
-const formStyle ={
-  width: '100%',
-  marginTop: '3%'
-}
-
-const buttonStyle = {
-  width: '100%'
-}
+// const formStyle ={
+//   width: '100%',
+//   marginTop: '3%'
+// }
+//
+// const buttonStyle = {
+//   width: '100%'
+// }
 
 export default class RegistrationForm extends Component {
 
@@ -89,7 +89,7 @@ export default class RegistrationForm extends Component {
     return(
       <div className="container">
         <div className="row col-12">
-            <Form style={formStyle} onSubmit={this.handleSubmit}>
+            <Form className="reservation-form" onSubmit={this.handleSubmit}>
               <h3>Reservation Form</h3>
               <FormGroup className="go">
                 <Label for="selectDriver">Choose Driver:</Label>
@@ -171,7 +171,7 @@ export default class RegistrationForm extends Component {
                   <Input type="textarea" name="message" id="exampleDate" placeholder=""
                     onChange={this.handleMesssage} />
                 </FormGroup>
-                <button style={buttonStyle} type="submit" className="btn btn-success" color="primary">Submit</button>
+                <button className="reservation-submit" type="submit" className="btn reservation-submit">Submit</button>
               </Form>
         </div>
       </div>

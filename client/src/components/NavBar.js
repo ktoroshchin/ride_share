@@ -15,8 +15,11 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem } from 'reactstrap';
-
-
+//
+// const burger = {
+//   backgroundColor: "red"
+//
+// }
 
 class NavBar extends Component {
 
@@ -41,9 +44,9 @@ render(){
 
   if(username === undefined){
   return(
-  <div>
-    <Navbar color="light" light expand="md">
-      <NavbarBrand href="/">reactstrap</NavbarBrand>
+  <div className="top-nav">
+    <Navbar className="navbar" dark expand="md">
+      <NavbarBrand className="logo" href="/">RideShare</NavbarBrand>
       <NavbarToggler onClick={this.toggle} />
       <Collapse isOpen={this.state.isOpen} navbar>
         <Nav className="ml-auto" navbar>
@@ -59,21 +62,21 @@ render(){
     </div>
   )}
   return(
-          <div>
-            <Navbar color="light" light expand="md">
-              <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <div className="top-nav">
+            <Navbar dark expand="md">
+              <NavbarBrand className="logo" href="/">RideShare</NavbarBrand>
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
-                <NavItem>Hello, {this.props.getUserName}
+                <NavItem><span className="greeting">Hello, {username}</span>
                   <NavItem onClick={this.props.deleteUser}>
-                    <Link to="/">LOGOUT</Link>
+                    <NavLink href="/">LOGOUT</NavLink>
                   </NavItem>
                 </NavItem>
                 </Nav>
               </Collapse>
             </Navbar>
-        </div>
+         </div>
       )
   }
 }

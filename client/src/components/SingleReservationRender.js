@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { ListGroupItem, ListGroup, Collapse } from 'reactstrap';
 
 
+
 class SingleReservationRender extends Component {
 
    state = {
@@ -23,13 +24,12 @@ render() {
 
   return (
     <div className="accordion" id="accordionExample">
+
       <div className="card">
         <div className="card-header" id="headingOne">
-          <h5 className="mb-0">
-            <button onClick={this.toggle} className="btn btn-link" type="button" >
-              Order #{id}
+            <button onClick={this.toggle} className="btn btn-link" type="button">
+              <span>Order #{id}      Departure Date: {departureDate}</span>
             </button>
-          </h5>
         </div>
         <Collapse isOpen={this.state.collapse}>
           <div id="collapseOne">
