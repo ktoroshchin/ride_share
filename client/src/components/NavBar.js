@@ -1,7 +1,8 @@
 
 /*jshint esversion: 6 */
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
+import LoggedInNavBar from "./LoggedInNavBar";
 import {
   Collapse,
   Navbar,
@@ -17,7 +18,7 @@ import {
 
 
 
-export default class NavBar extends Component {
+class NavBar extends Component {
 
 
 
@@ -36,50 +37,44 @@ export default class NavBar extends Component {
 
 
 render(){
+  const username = this.props.getUserName();
 
-
-
-
+  if(username === undefined){
   return(
-    <div>
+  <div>
     <Navbar color="light" light expand="md">
       <NavbarBrand href="/">reactstrap</NavbarBrand>
       <NavbarToggler onClick={this.toggle} />
       <Collapse isOpen={this.state.isOpen} navbar>
         <Nav className="ml-auto" navbar>
-          <NavItem>
-            <NavLink href="/components/">Components</NavLink>
+          <NavItem >
+            <Link to="/login">DRIVER LOGIN</Link>
           </NavItem>
-          <NavItem>
-            <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+          <NavItem >
+            <Link to="/register">DRIVER REGISTER</Link>
           </NavItem>
-          <UncontrolledDropdown nav inNavbar>
-            <DropdownToggle nav caret>
-              Options
-            </DropdownToggle>
-            <DropdownMenu right>
-              <DropdownItem>
-                Option 1
-              </DropdownItem>
-              <DropdownItem>
-                Option 2
-              </DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>
-                Reset
-              </DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
         </Nav>
       </Collapse>
     </Navbar>
-  </div>
-
-
-
-
-
-
-    )
+    </div>
+  )}
+  return(
+          <div>
+            <Navbar color="light" light expand="md">
+              <NavbarBrand href="/">reactstrap</NavbarBrand>
+              <NavbarToggler onClick={this.toggle} />
+              <Collapse isOpen={this.state.isOpen} navbar>
+                <Nav className="ml-auto" navbar>
+                <NavItem>Hello, {this.props.getUserName}
+                  <NavItem onClick={this.props.deleteUser}>
+                    <Link to="/">LOGOUT</Link>
+                  </NavItem>
+                </NavItem>
+                </Nav>
+              </Collapse>
+            </Navbar>
+        </div>
+      )
   }
 }
+export default NavBar;

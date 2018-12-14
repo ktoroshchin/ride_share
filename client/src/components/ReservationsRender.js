@@ -2,8 +2,8 @@
 import React, { Component } from "react";
 import { ListGroupItem, ListGroup, Collapse } from 'reactstrap';
 import axios from 'axios';
-import SingleReservationRender from './SingleReservationRender'
-
+import SingleReservationRender from './SingleReservationRender';
+import LoggedInNavBar from './LoggedInNavBar';
 
 
 class ReservationsRender extends Component {
@@ -23,7 +23,7 @@ class ReservationsRender extends Component {
 
 
   render() {
-    return (
+    return(
       <div className="container">
         {this.state.reservations.map (({ id, first_name, leaving_from, going_to,
           phone_number, email, departure_date, departure_time, number_of_people, is_confirmed, message}, index) => {
@@ -39,6 +39,7 @@ class ReservationsRender extends Component {
     );
   }
 }
+
 
 
 

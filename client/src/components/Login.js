@@ -1,9 +1,10 @@
 
 /*jshint esversion: 6 */
 import React, { Component } from "react";
-import { Form, FormGroup, Label, Input } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import axios from 'axios';
 import { Redirect } from 'react-router'
+import { Link } from "react-router-dom";
 
 export default class Login extends Component {
 
@@ -42,33 +43,40 @@ export default class Login extends Component {
     }
   }
 
+  handleCancelButton = () => {
+    return <Redirect to='/'/>
+  }
+
   setUser = (data) => {
     this.props.setUserFirstName(this.state.first_name);
     // this.props.setUserLastName(this.state.last_name);
-
     this.setState({redirect:true});
+
   }
+
+
 
   handleSubmit = (event) => {
     event.preventDefault()
     const { email, password } = this.state;
+    const arr = []
+    console.log(arr)
+
 
     axios.get('/login').then(data => {
       data.data.map(obj => {
         if(this.state.email === obj.email && this.state.password === obj.password){
-          console.log(obj)
+          arr.push(obj.email)
+          arr.push(obj.password)
           this.setState({first_name: obj.first_name})
-        return this.setUser(data)
-      }
-    })
+          this.setUser(data)
+        }
+      })
+      if (arr.indexOf(email) === -1 || arr.indexOf(password) === -1) {
+         alert("element doesn't exist");
+    }
   })
-}
-
-
-
-
-
-
+  }
 
 
 
@@ -95,7 +103,8 @@ render(){
             onChange={this.handlePassword}/>
           </FormGroup>
           <button type="submit" className="btn btn-success" color="primary">Submit</button>
-        </Form>
+          <Button tag={Link} to="/" type="cancel" className="btn btn-danger" color="primary">Submit</Button>
+      </Form>
       </div>
     )
   }

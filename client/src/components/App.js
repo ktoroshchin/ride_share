@@ -45,7 +45,7 @@ class App extends Component {
       <div>
       <Router>
         <div className="App">
-          <NavBar/>
+          <NavBar deleteUser={deleteUser} getUserName={getUserName} />
           <Container className="mainContainer p-0">
             <Route exact path="/" component={ReservationForm}/>
             <Route path="/register" render={() => <Register setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserID={getUserID}/>} />

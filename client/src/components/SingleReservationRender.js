@@ -38,7 +38,7 @@ render() {
                <ListGroupItem>First Name: {firstName}</ListGroupItem>
                <ListGroupItem>Departure Date: {departureDate}</ListGroupItem>
                <ListGroupItem>Leaving From: {leavingFrom}</ListGroupItem>
-               <ListGroupItem>Departure Time: {departureDate}</ListGroupItem>
+               <ListGroupItem>Departure Time: {departureTime}</ListGroupItem>
                <ListGroupItem>Going To: {goingTo}</ListGroupItem>
                <ListGroupItem>Phone #: {phoneNumber}</ListGroupItem>
                <ListGroupItem>Email: {email}</ListGroupItem>

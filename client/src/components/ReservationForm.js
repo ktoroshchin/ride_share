@@ -95,7 +95,7 @@ export default class RegistrationForm extends Component {
                 <Label for="selectDriver">Choose Driver:</Label>
                 <Input type="select" name="driver_name" id="selectDriver" placeholder=""
                   onChange={this.onChangeItem}>
-                  <option selected disabled></option>
+                  <option defaultValue></option>
                   <option>Bob</option>
                   <option>John</option>
                   <option>test</option>
@@ -116,7 +116,7 @@ export default class RegistrationForm extends Component {
                   <Label for="leavingFrom">Leaving from:</Label>
                   <Input type="select" name="leaving_from" id="leavingFrom" placeholder=""
                     onChange={this.onChangeItem}>
-                    <option selected disabled></option>
+                    <option defaultValue></option>
                     <option>Ottawa</option>
                     <option>Montreal</option>
                   </Input>
@@ -126,7 +126,7 @@ export default class RegistrationForm extends Component {
                   <Label for="goingTo">Going to:</Label>
                   <Input type="select" name="going_to" id="leavingFrom" placeholder=""
                     onChange={this.onChangeItem}>
-                    <option selected disabled></option>
+                    <option defaultValue></option>
                     <option>Ottawa</option>
                     <option>Montreal</option>
                   </Input>
@@ -135,7 +135,7 @@ export default class RegistrationForm extends Component {
                   <Label for="departureTime">Departure Time</Label>
                   <Input type="select" name="departure_time" id="departureTime"
                     onChange={this.onChangeItem}>
-                    <option selected disabled></option>
+                    <option defaultValue></option>
                     <option>5:45</option>
                     <option>6:45</option>
                   </Input>
@@ -156,7 +156,7 @@ export default class RegistrationForm extends Component {
                   <Label for="exampleSelect">Number of passengers</Label>
                   <Input type="select" name="number_of_people" id="exampleSelect"
                     onChange={this.onChangeItem}>
-                    <option selected disabled></option>
+                    <option defaultValue></option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
