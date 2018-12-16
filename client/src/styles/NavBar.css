@@ -16,9 +16,11 @@
   color: white;
   background-color: #123c69;
   border-radius: 5px;
+  text-align: center;
+  margin: 4px;
 }
 
 .greeting{
-  color: #123c69;
+  color: #ac3b61;
   font-weight: bold;
 }

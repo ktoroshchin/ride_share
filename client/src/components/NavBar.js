@@ -51,10 +51,10 @@ render(){
       <Collapse isOpen={this.state.isOpen} navbar>
         <Nav className="ml-auto" navbar>
           <NavItem >
-            <Link to="/login">DRIVER LOGIN</Link>
+            <NavLink href="/login">DRIVER LOGIN</NavLink>
           </NavItem>
           <NavItem >
-            <Link to="/register">DRIVER REGISTER</Link>
+            <NavLink href="/register">DRIVER REGISTER</NavLink>
           </NavItem>
         </Nav>
       </Collapse>

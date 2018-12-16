@@ -30,8 +30,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {
-    "css-loader": "^2.0.1",
-    "style-loader": "^0.23.1"
-  }
+  "devDependencies": {}
 }

@@ -1,13 +1,41 @@
 .btn.btn-link{
  width: 100%;
  text-decoration: none;
- color: orange;
+ color: white;
+ font-size: 25px;
 }
 
 .accordion{
   margin-top: 5px;
 }
 
-.card{
-  background-color: grey;
+.container-for-order{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge{
+  color: #ac3b61;
+  background-color: white;
+}
+
+.accordion .card:last-of-type{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #123c69
+}
+
+
+#phone-link{
+  text-decoration: none;
+  color: black;
+}
+
+
+.textPreFix{
+  text-decoration: underline;
+  font-weight: bold;
+
+
 }
