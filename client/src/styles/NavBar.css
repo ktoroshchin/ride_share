@@ -13,11 +13,16 @@
 }
 
 .navbar-dark .navbar-nav .nav-link{
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
   color: white;
   background-color: #123c69;
   border-radius: 5px;
   text-align: center;
   margin: 4px;
+  height: 60px;
 }
 
 .greeting{

@@ -6,14 +6,6 @@ import { Redirect } from 'react-router';
 import axios from 'axios';
 import Confirmation from './Confirmation'
 
-// const formStyle ={
-//   width: '100%',
-//   marginTop: '3%'
-// }
-//
-// const buttonStyle = {
-//   width: '100%'
-// }
 
 export default class RegistrationForm extends Component {
 
@@ -75,9 +67,6 @@ export default class RegistrationForm extends Component {
       })
     }
     }
-
-
-
 
   render() {
     const { redirect } = this.state

@@ -90,8 +90,8 @@ render(){
   }
   return(
     <div className="container">
-      <Form onSubmit={this.handleSubmit}>
-        <h3>Login</h3>
+      <Form className="row login-form" onSubmit={this.handleSubmit}>
+        <h3 className="login">Login</h3>
           <FormGroup>
             <Label for="exampleEmail">Email</Label>
             <Input type="email" name="email" id="exampleEmail" placeholder=""
@@ -102,8 +102,8 @@ render(){
             <Input type="password" name="password" id="examplePassword" placeholder=""
             onChange={this.handlePassword}/>
           </FormGroup>
-          <button type="submit" className="btn btn-success" color="primary">Submit</button>
-          <Button tag={Link} to="/" type="cancel" className="btn btn-danger" color="primary">Submit</Button>
+          <button type="submit" className="btn submit-button">Submit</button>
+          <Button tag={Link} to="/" type="cancel" className="btn cancel-button">Cancel</Button>
       </Form>
       </div>
     )

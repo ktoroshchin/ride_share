@@ -95,11 +95,17 @@ export default class Register extends Component {
     event.preventDefault()
     const { email, password, first_name, last_name, vehicle_type } = this.state;
 
+    if(!this.state.first_name || !this.state.email || !this.state.password ||
+    !this.state.last_name || !this.state.vehicle_type){
+      alert("Please fill out all required fields")
+    } else {
+
     axios.post('/register', { email: email, password: password, first_name: first_name, last_name: last_name,
     vehicle_type: vehicle_type }).then(data => {
       this.setUser(data)
       })
     }
+  }
 
 
 
@@ -111,8 +117,8 @@ export default class Register extends Component {
     }
     return(
     <div className="container">
-      <Form onSubmit={this.handleSubmit}>
-      <h3>Registration Form</h3>
+      <Form className="row register-form" onSubmit={this.handleSubmit}>
+      <h3 className="register">Registration Form</h3>
         <FormGroup>
           <Label for="exampleEmail">Email</Label>
           <Input type="email" name="email" id="exampleEmail" placeholder=""
@@ -138,8 +144,8 @@ export default class Register extends Component {
           <Input type="text" name="vehicle_type" id="vehicle_type" placeholder=""
           onChange={this.handleVehicleType}/>
         </FormGroup>
-      <button type="submit" className="btn btn-success" color="primary">Submit</button>
-      <Button tag={Link} to="/" type="cancel" className="btn btn-danger" color="primary">Cancel</Button>
+      <button type="submit" className="btn submit-button">Submit</button>
+      <Button tag={Link} to="/" type="cancel" className="btn cancel-button">Cancel</Button>
     </Form>
     </div>
     )

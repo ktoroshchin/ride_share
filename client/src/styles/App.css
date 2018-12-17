@@ -1,15 +1,25 @@
 @import "./SingleReservationRender.css";
 @import "./NavBar.css";
 @import "./ReservationForm.css";
+@import "./Confirmation.css";
+@import "./LoginForm.css";
+@import "./RegisterForm.css";
+
+html {
+  height: 100%;
+}
 body {
-  margin: 0;
-  padding: 0;
+  height: 100% ;
   background-color:#eee2dc;
   font-family: -apple-system, Amaranth, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  height: 100%;
+  width: 100%;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

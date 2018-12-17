@@ -1,0 +1,19 @@
+.confirmation {
+  margin-top: 70px;
+  background-color: #123c69;
+  border-radius: 10px;
+  color: white;
+}
+
+.thank-you-row{
+  margin-bottom: 5%;
+}
+
+.confirmation-row{
+  padding: 5%;
+}
+
+.thanks-from-rideshare{
+  display: flex;
+  justify-content: center;
+}

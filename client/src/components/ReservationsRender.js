@@ -34,12 +34,12 @@ class ReservationsRender extends Component {
     return(
       <div className="container">
         {this.state.reservations.map (({ id, first_name, leaving_from, going_to,
-          phone_number, email, departure_date, departure_time, number_of_people, is_confirmed, message}, index) => {
+          phone_number, email, departure_date, departure_time, number_of_people, is_confirmed, message, created_at}, index) => {
         return (
             <div>
               <SingleReservationRender {...this.state} handler={this.handler} id= {index} firstName={first_name} leavingFrom={leaving_from} goingTo={going_to} phoneNumber={phone_number}
                 email={email} departureDate={departure_date} departureTime={departure_time} numberOfPeople={number_of_people}
-                isConfirmed={is_confirmed} message={message} >
+                isConfirmed={is_confirmed} message={message} created_at={created_at} >
               </SingleReservationRender>
             </div>
 )})}

@@ -15,15 +15,8 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem } from 'reactstrap';
-//
-// const burger = {
-//   backgroundColor: "red"
-//
-// }
 
 class NavBar extends Component {
-
-
 
   state = {
     isOpen: false
@@ -69,6 +62,9 @@ render(){
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                 <NavItem><span className="greeting">Hello, {username}</span>
+                  <NavItem>
+                    <NavLink href="/my-reservations">RESERVATIONS</NavLink>
+                  </NavItem>
                   <NavItem onClick={this.props.deleteUser}>
                     <NavLink href="/">LOGOUT</NavLink>
                   </NavItem>

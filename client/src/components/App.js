@@ -13,6 +13,8 @@ import Login from './Login'
 import Confirmation from './Confirmation'
 import NavBar from './NavBar'
 
+
+
 const cookies = new Cookies();
 const setUserID = function(userID) {
   cookies.set('userID', userID, {path: '/'})
@@ -43,18 +45,19 @@ class App extends Component {
   render() {
     return (
       <div>
-      <Router>
-        <div className="App">
-          <NavBar deleteUser={deleteUser} getUserName={getUserName} />
-          <Container className="mainContainer p-0">
-            <Route exact path="/" component={ReservationForm}/>
-            <Route path="/register" render={() => <Register setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserID={getUserID}/>} />
-            <Route path="/login" render={() => <Login setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserName={getUserName} getUserID={getUserID}/>} />
-            <Route path="/my-reservations" render={() => <ReservationsRender  getUserName={getUserName}/>} />
-        </Container>
-        </div>
-      </Router>
-    </div>
+        <Router>
+          <div className="App">
+            <NavBar deleteUser={deleteUser} getUserName={getUserName} />
+            <Container className="mainContainer p-0">
+              <Route exact path="/" render={() => <ReservationForm getUserName={getUserName}/>}/>
+              <Route path="/register" render={() => <Register setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserID={getUserID}/>} />
+              <Route path="/login" render={() => <Login setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserName={getUserName} getUserID={getUserID}/>} />
+              <Route path="/my-reservations" render={() => <ReservationsRender  getUserName={getUserName}/>} />
+              <Route path="/confirmation" component={Confirmation}/>
+          </Container>
+          </div>
+        </Router>
+      </div>
     );
   }
 }

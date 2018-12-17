@@ -1,0 +1,34 @@
+.login-form{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-top: 2em;
+}
+.login{
+  display: flex;
+  justify-content: center;
+}
+
+
+.submit-button {
+  background-color: #123c69;
+  margin-bottom: 10px;
+  color: white;
+  height: 4em;
+}
+
+.cancel-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ac3b61;
+  color: white;
+  height: 4em;
+}
+
+#exampleEmail,#examplePassword,#first_name,#last_name,#vehicle_type {
+  height: 3em;
+}
+
+
+
