@@ -40,11 +40,38 @@ const deleteUser = function() {
 }
 
 
+
+
+
+
+
 class App extends Component {
+    state = {
+      loading: true,
+    };
+
+
+
+
+    componentDidMount() {
+      // the setTimeout just simulates an async action, after which the component will render the content
+      setTimeout(() => this.setState({ loading: false }), 1500);
+    }
+
+
+
+
+
+
 
   render() {
+        const { loading } = this.state;
+        if(loading) { // if your component doesn't have to wait for an async action, remove this block
+          return (<div className="preload-title">
+            Loading page...
+          </div>)
+        }
     return (
-      <div>
         <Router>
           <div className="App">
             <NavBar deleteUser={deleteUser} getUserName={getUserName} />
@@ -55,9 +82,9 @@ class App extends Component {
               <Route path="/my-reservations" render={() => <ReservationsRender  getUserName={getUserName}/>} />
               <Route path="/confirmation" component={Confirmation}/>
           </Container>
-          </div>
+        </div>
         </Router>
-      </div>
+
     );
   }
 }

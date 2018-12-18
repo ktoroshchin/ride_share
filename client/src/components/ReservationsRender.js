@@ -9,26 +9,29 @@ class ReservationsRender extends Component {
   state = {
     reservations: [],
     driver_name: this.props.getUserName(),
-
   };
 
 
+    // 
+    // handleDelete = (event) => {
+    //   event.preventDefault()
+    //   let id = event.target.value.id
+    //   console.log(id)
+    //
+    // }
 
 
 
-
-
-  // const  {userID} = this.props.getUserID;
   componentDidMount(){
-    axios.get('/admin').then(response => {
-      this.setState({
-        reservations: response.data.filter(driver => driver.driver_name === this.state.driver_name)
+      axios.get('/admin').then(response => {
+        this.setState({
+          reservations: response.data.filter(driver => driver.driver_name === this.state.driver_name)
+        })
       })
-    })
-}
-
+  }
 
   render() {
+    const { id } = this.props
 
 
     return(
@@ -37,7 +40,7 @@ class ReservationsRender extends Component {
           phone_number, email, departure_date, departure_time, number_of_people, is_confirmed, message, created_at}, index) => {
         return (
             <div>
-              <SingleReservationRender {...this.state} handler={this.handler} id= {index} firstName={first_name} leavingFrom={leaving_from} goingTo={going_to} phoneNumber={phone_number}
+              <SingleReservationRender {...this.state} deleteHandler={this.handleDelete} handler={this.handler} id={id} index={index} firstName={first_name} leavingFrom={leaving_from} goingTo={going_to} phoneNumber={phone_number}
                 email={email} departureDate={departure_date} departureTime={departure_time} numberOfPeople={number_of_people}
                 isConfirmed={is_confirmed} message={message} created_at={created_at} >
               </SingleReservationRender>

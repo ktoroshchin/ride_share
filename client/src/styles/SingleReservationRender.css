@@ -36,6 +36,15 @@
 .textPreFix{
   text-decoration: underline;
   font-weight: bold;
+}
 
+.delete-button{
+  background-color: #ac3b61;
+  display: flex;
+  justify-content: center;
 
+}
+
+.btn.btn-link.delete{
+  width: 5em;
 }

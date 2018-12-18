@@ -9,7 +9,7 @@ const express = require('express');
 const adminRoute = require('./routes/admin');
 const homeRoute = require('./routes/home');
 const registerRoute = require('./routes/register');
-const loginRoute = require('./routes/login')
+const loginRoute = require('./routes/login');
 
 const knexConfig = require('./knexfile');
 const knexLogger = require('knex-logger');

@@ -77,7 +77,7 @@ export default class RegistrationForm extends Component {
 
     return(
       <div className="container">
-        <div className="row col-12">
+        <div className="col-12">
             <Form className="reservation-form" onSubmit={this.handleSubmit}>
               <h3>Reservation Form</h3>
               <FormGroup className="go">

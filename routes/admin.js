@@ -11,11 +11,29 @@ module.exports = (knex) => {
       .orderBy("departure_date","asc")
       .then((data) => {
         res.send(data);
-      })
-      .catch((err) => {
-        console.log(err);
-        throw err;
       });
   });
+  router.post('/:id', (req, res) => {
+    console.log("deleting...")
+    knex("reservations")
+     .where({ id: req.params.id})
+     .del()
+     .then((data) => {
+       console.log("LOGGGING DATA:" + data);
+       // res.json(data);
+     })
+     .catch((err) => {
+       console.log(err);
+       throw err;
+     })
+     .finally(() => {
+     });
+  })
   return router;
 };
+
+
+
+
+
+

@@ -1,14 +1,30 @@
 /*jshint esversion: 6 */
 import React, { Component } from "react";
 import { Badge } from 'reactstrap';
+import Login from './Login';
 
-export default class Confirmation extends Component {
+class Confirmation extends Component {
 
+  state= {
+    loading: true,
+  }
 
+  componentDidMount() {
+    setTimeout(() => this.setState({ loading: false }), 4000);
+  }
 
 
   render(){
-    return(
+    const { loading } = this.state;
+
+
+
+
+      if(loading) { // if your component doesn't have to wait for an async action, remove this block
+        return (<div>Submitting your reservation...</div>)
+
+      }
+      return(
       <div className="container confirmation">
         <div className="row confirmation-row">
           <h1 className="col-12 thank-you-row">Thank you for your reservation, {this.props.driver_name} will
@@ -23,3 +39,4 @@ export default class Confirmation extends Component {
     )
   }
 }
+export default Confirmation;
