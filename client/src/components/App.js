@@ -58,30 +58,24 @@ class App extends Component {
       setTimeout(() => this.setState({ loading: false }), 1500);
     }
 
-
-
-
-
-
-
   render() {
-        const { loading } = this.state;
-        if(loading) { // if your component doesn't have to wait for an async action, remove this block
-          return (<div className="preload-title">
-            Loading page...
-          </div>)
-        }
+    const { loading } = this.state;
+    if(loading) {
+      return (<div className="preload-title">
+        Loading page...
+      </div>)
+    }
     return (
         <Router>
           <div className="App">
             <NavBar deleteUser={deleteUser} getUserName={getUserName} />
-            <Container className="mainContainer p-0">
+            <Container className="mainContainer">
               <Route exact path="/" render={() => <ReservationForm getUserName={getUserName}/>}/>
               <Route path="/register" render={() => <Register setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserID={getUserID}/>} />
               <Route path="/login" render={() => <Login setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserName={getUserName} getUserID={getUserID}/>} />
               <Route path="/my-reservations" render={() => <ReservationsRender  getUserName={getUserName}/>} />
               <Route path="/confirmation" component={Confirmation}/>
-          </Container>
+            </Container>
         </div>
         </Router>
 

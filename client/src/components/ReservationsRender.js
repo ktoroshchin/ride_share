@@ -11,17 +11,6 @@ class ReservationsRender extends Component {
     driver_name: this.props.getUserName(),
   };
 
-
-    // 
-    // handleDelete = (event) => {
-    //   event.preventDefault()
-    //   let id = event.target.value.id
-    //   console.log(id)
-    //
-    // }
-
-
-
   componentDidMount(){
       axios.get('/admin').then(response => {
         this.setState({

@@ -13,7 +13,6 @@ class SingleReservationRender extends Component {
   state = {
     collapse: false,
     remove: true,
-    id: '',
     redirect: false,
   };
 
@@ -57,13 +56,12 @@ class SingleReservationRender extends Component {
     }
   }
 
-
+//onClick delete order from DB and redirect to the same page to update info
   handleDelete = (event) => {
     event.preventDefault()
     let id = this.props.id
     axios.post("/admin/"+id)
     .then( response => {
-      console.log("fuck you!!!!!")
       console.log(response)
     })
     this.setState({
@@ -76,8 +74,8 @@ class SingleReservationRender extends Component {
 
 render() {
   const { id, index, firstName, leavingFrom, goingTo, phoneNumber, email, departureDate, departureTime, numberOfPeople, message} = this.props;
-  const { visibility } = this.state;
-  const { redirect } = this.state;
+  const { visibility, redirect } = this.state;
+
 
   if( redirect ){
     return  <Redirect to='/my-reservations'/>
@@ -99,7 +97,7 @@ render() {
         <div className="container delete-button">
 
             <button onClick={this.handleDelete} id={id}  className="btn btn-link delete" type="button">Delete</button>
-          
+
         </div>
       <Collapse isOpen={this.state.collapse}>
           <div id="collapseOne">
