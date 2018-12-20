@@ -5,7 +5,6 @@ App helps people submit reservation and provide a friendly interface for drivers
 
 ##Technical Specifications
 Stack:
-
 * Front-end: JSX, ES6, REACT, BOOTSTRAP, REACTSTRAP, AXIOS
 * Back-end: EXPRESS, KNEX, postgreSQL, nodemon(for development)
 
