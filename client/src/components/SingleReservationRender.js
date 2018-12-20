@@ -6,7 +6,7 @@ import axios from 'axios';
 import { Redirect } from 'react-router'
 
 const arr = JSON.parse(localStorage.getItem('notification')) || [];
-console.log(arr)
+
 
 class SingleReservationRender extends Component {
 
