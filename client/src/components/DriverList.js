@@ -1,6 +1,7 @@
 /*jshint esversion: 6 */
 import React, { Component } from "react";
-import { ListGroupItem, ListGroup, Collapse, Badge  } from 'reactstrap';
+import PhoneNumber from 'react-phone-number'
+import { ListGroupItem, ListGroup, Collapse } from 'reactstrap';
 
 
 
@@ -24,35 +25,28 @@ class DriverList extends Component {
 
 
 
-      <div className="col-xs-12 accordion" id="accordionExample">
-        <div className="card">
-          <div className="card-header" id="headingOne">
-              <button className="container" onClick={this.toggle} className="btn btn-link" type="button">
-                <div onClick={this.handler}  className="row container-for-order" col-lg-12>
-                    <span className="col-12">Order #{index}</span>
-                    <span className="col-12 departDate">Departure Date: {departureDate}</span>
-                    {this.state.remove ? (<span className="col-12"><Badge className="badge" >New</Badge></span>):<span col-12><Badge style={{visibility:"hidden"}}>New</Badge></span>}
+      <div className="accordion-driver col-xs-12" >
+        <div className="card driver-card">
+          <div className="card-header" >
+              <button onClick={this.toggle} className="btn btn-link" type="button">
+                <div className="row driver-list-container" col-lg-12>
+                    <span className="col-12">Test Testing</span>
+                    <span className="col-12" id="driver-route">Ottawa  Montreal</span>
                 </div>
               </button>
-          </div>
-          <div className="container delete-button">
-
-              <button onClick={this.handleDelete} id={id}  className="btn btn-link delete" type="button">Delete</button>
-
           </div>
         <Collapse isOpen={this.state.collapse}>
             <div id="collapseOne">
               <div className="card-body">
               <ListGroup>
-                 <ListGroupItem><span className="textPreFix">First Name:</span> {firstName}</ListGroupItem>
-                 <ListGroupItem><span className="textPreFix">Departure Date:</span> {departureDate}</ListGroupItem>
-                 <ListGroupItem><span className="textPreFix">Leaving From:</span> {leavingFrom}</ListGroupItem>
-                 <ListGroupItem><span className="textPreFix">Departure Time:</span> {departureTime}</ListGroupItem>
-                 <ListGroupItem><span className="textPreFix">Going To:</span> {goingTo}</ListGroupItem>
-                 <ListGroupItem><span className="textPreFix">Phone #:</span><PhoneNumber number={phoneNumber} isLinked={true} style={{textColor:"black"}} /></ListGroupItem>
-                 <ListGroupItem><span className="textPreFix">Email:</span> {email}</ListGroupItem>
-                 <ListGroupItem><span className="textPreFix">Number of Passengers:</span> {numberOfPeople}</ListGroupItem>
-                 <ListGroupItem><span className="textPreFix">Message:</span> {message}</ListGroupItem>
+                 <ListGroupItem><span className="textPreFix">Driver Name: Test Testing</span> </ListGroupItem>
+                 <ListGroupItem><span className="textPreFix">Pick-Up/Drop-Off in Ottawa:</span> </ListGroupItem>
+                 <ListGroupItem><span className="textPreFix">Pick-Up/Drop-Off in Montreal:</span> </ListGroupItem>
+                 <ListGroupItem><span className="textPreFix">Departures time from OTTAWA:</span> </ListGroupItem>
+                 <ListGroupItem><span className="textPreFix">Departure time from MONTREAL:</span> </ListGroupItem>
+                 <ListGroupItem><span className="textPreFix">Phone #:</span><a href="tel:+1(613)617-4482"  data-rel="external">+1(613)617-4482</a></ListGroupItem>
+                 <ListGroupItem><span className="textPreFix">Email:</span> </ListGroupItem>
+                 <ListGroupItem><span className="textPreFix">Price: $20</span> </ListGroupItem>
                </ListGroup>
               </div>
             </div>
