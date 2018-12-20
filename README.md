@@ -13,9 +13,9 @@ Stack:
 
 
 
-### Homepage
-![Homepage](./docs/UserNameColor_change.png)
-### Screenshot drivers list of orders
-![Screenshot drivers account](./docs/Three_users_connected.png)
-### Screenshot order details
-![Screenshot userNames assigned different colors](./docs/UserNameColor_change.png)
+### Homepage(mobile version)
+![Homepage](./docs/Homepage.png)
+### Screenshot drivers list of orders(mobile version)
+![Screenshot drivers account](./docs/Order_list.png)
+### Screenshot order details(mobile version)
+![Screenshot order details](./docs/Order_details.png)
