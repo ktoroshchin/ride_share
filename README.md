@@ -4,7 +4,6 @@ A user-friendly full stack web application based on create-react-app for people 
 App helps people submit reservation and provide a friendly interface for drivers to manage orders.
 
 ##Technical Specifications
-
 Stack:
 
 * Front-end: JSX, ES6, REACT, BOOTSTRAP, REACTSTRAP, AXIOS
