@@ -9,7 +9,7 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background-color: #123c69;
-  margin-top: 2em; 
+  margin-top: 2em;
 }
 
 
@@ -17,6 +17,12 @@
 #driver-route{
   font-size: initial
   !important
+}
+
+.arrow {
+position: absolute;
+margin-left: 4em;
+bottom: 1em;
 }
 
 
