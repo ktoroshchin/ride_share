@@ -9,12 +9,14 @@ class ReservationsRender extends Component {
   state = {
     reservations: [],
     driver_name: this.props.getUserName(),
+    driver_lastName: this.props.getUserLastName(),
+    driver_fullName: this.props.getUserFullName()
   };
 
   componentDidMount(){
       axios.get('/admin').then(response => {
         this.setState({
-          reservations: response.data.filter(driver => driver.driver_name === this.state.driver_name)
+          reservations: response.data.filter(driver => driver.driver_name === this.state.driver_fullName)
         })
       })
   }

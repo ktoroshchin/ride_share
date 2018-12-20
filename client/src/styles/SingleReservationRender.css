@@ -32,6 +32,9 @@
   color: black;
 }
 
+.departDate{
+  font-size: large;
+}
 
 .textPreFix{
   text-decoration: underline;

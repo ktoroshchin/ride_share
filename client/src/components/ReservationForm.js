@@ -85,9 +85,8 @@ export default class RegistrationForm extends Component {
                 <Input type="select" name="driver_name" id="selectDriver" placeholder=""
                   onChange={this.onChangeItem}>
                   <option defaultValue></option>
-                  <option>Bob</option>
-                  <option>John</option>
-                  <option>test</option>
+                  <option>Tom Hardy</option>
+                  <option>Test Testing</option>
                 </Input>
               </FormGroup>
 
