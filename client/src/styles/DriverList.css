@@ -9,9 +9,16 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background-color: #123c69;
-  margin-top: 2em;
+
 }
 
+
+.list-of-avail-drivers{
+  margin: 2px;
+  justify-content: center;
+  margin-top: 1em;
+  color: #123c69;
+}
 
 
 #driver-route{
@@ -23,6 +30,8 @@
 position: absolute;
 margin-left: 4em;
 bottom: 1em;
+border: 1px solid white;
+padding: 0 7px 0 7px;
 }
 
 
@@ -30,3 +39,71 @@ bottom: 1em;
   text-decoration: underline;
   font-weight: bold;
 }
+
+
+
+@media (max-width: 395px){
+  .arrow{
+  position: absolute;
+  margin-left: 7em;
+  bottom: 1em;
+  }
+}
+
+
+@media (min-width: 330px){
+  .arrow{
+  position: absolute;
+  margin-left: 2em;
+  bottom: 1em;
+  }
+}
+
+@media (min-width: 440px){
+    .arrow{
+    position: absolute;
+    margin-left: 4em;
+    bottom: 1em;
+    }
+}
+
+
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 500px){
+  .arrow{
+  position: absolute;
+  margin-left: 7em;
+  bottom: 1em;
+  }
+}
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px){
+  .arrow{
+  position: absolute;
+  margin-left: 13em;
+  bottom: 1em;
+  }
+}
+
+@media (min-width: 992px){
+  .arrow{
+  position: absolute;
+  margin-left: 20em;
+  bottom: 1em;
+  }
+}
+
+
+@media (min-width: 1200px){
+  .arrow{
+  position: absolute;
+  margin-left: 26em;
+  bottom: 1em;
+  }
+}
+
+
+
+
+

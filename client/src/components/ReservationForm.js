@@ -85,7 +85,7 @@ export default class RegistrationForm extends Component {
                 <Input type="select" name="driver_name" id="selectDriver" placeholder=""
                   onChange={this.onChangeItem}>
                   <option defaultValue></option>
-                  <option>Tom Hardy</option>
+
                   <option>Test Testing</option>
                 </Input>
               </FormGroup>
@@ -127,6 +127,7 @@ export default class RegistrationForm extends Component {
                     <option>5:45</option>
                     <option>6:45</option>
                   </Input>
+                  <span><h6 className="warning">(Choose only your drivers available time)</h6></span>
                 </FormGroup>
                 <FormGroup>
                   <Label for="phoneNumber">Phone Number</Label>

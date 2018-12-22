@@ -24,15 +24,17 @@ class DriverList extends Component {
     return(
 
 
-
-      <div className="accordion-driver col-xs-12" >
-        <div className="card driver-card">
+      <div className="accordion-driver col-xs-12 container" >
+        <div className="row list-of-avail-drivers">
+          <h5>List of available drivers</h5>
+        </div>
+      <div className="card driver-card row">
           <div className="card-header" >
               <button onClick={this.toggle} className="btn btn-link container" type="button">
                 <div className="row driver-list-container" col-lg-12>
                     <span className="col-12">Test Testing</span>
                     <span className="col-12" id="driver-route">Ottawa <i class="fas fa-arrows-alt-h"></i> Montreal
-                    {this.state.collapse ? <span className="arrow"><i class="fas fa-caret-up"></i></span>:<span className="arrow"><i class="fas fa-caret-down"></i></span> }</span>
+                    {this.state.collapse ? <span className="arrow"><i class="fas fa-caret-up fa-2x"></i></span>:<span className="arrow"><i class="fas fa-caret-down fa-2x"></i></span> }</span>
                 </div>
               </button>
 
