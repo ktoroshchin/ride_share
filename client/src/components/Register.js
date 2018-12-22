@@ -1,8 +1,9 @@
 
 /*jshint esversion: 6 */
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import axios from 'axios';
+import bcrypt from 'bcryptjs';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
 
@@ -111,11 +112,18 @@ export default class Register extends Component {
     !this.state.last_name || !this.state.vehicle_type){
       alert("Please fill out all required fields")
     } else {
+      bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(this.state.password, salt, (err, hash) => {
 
-    axios.post('/register', { email: email, password: password, first_name: first_name, last_name: last_name,
-    vehicle_type: vehicle_type }).then(data => {
-      this.setUser(data)
-      })
+          this.setState({
+            password: hash
+          })
+          axios.post('/register', { email: email, password: hash, first_name: first_name, last_name: last_name,
+          vehicle_type: vehicle_type }).then(data => {
+            this.setUser(data)
+          });
+        });
+      });
     }
   }
 
@@ -123,7 +131,7 @@ export default class Register extends Component {
 
   render() {
     const { redirect } = this.state;
-
+    
     if( redirect ) {
       return <Redirect to='/my-reservations'/>
     }

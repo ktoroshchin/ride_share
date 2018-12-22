@@ -1,8 +1,9 @@
 
 /*jshint esversion: 6 */
 import React, { Component } from "react";
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import axios from 'axios';
+import bcrypt from 'bcryptjs';
+import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import { Redirect } from 'react-router'
 import { Link } from "react-router-dom";
 
@@ -62,36 +63,47 @@ export default class Login extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const { email, password } = this.state;
-    const arr = []
-    var first;
-    var last;
-    var fullname;
+    let emailArr = [];
+    console.log(emailArr)
+    let first;
+    let last;
+    let fullname;
+    let hash;
+
 
 
 
     axios.get('/login').then(data => {
       data.data.map(obj => {
-        if(this.state.email === obj.email && this.state.password === obj.password){
-          arr.push(obj.email)
-          arr.push(obj.password)
-          this.setState({first_name: obj.first_name})
-          this.setState({last_name: obj.last_name})
-          var first_name = this.state.first_name;
-          var last_name = this.state.last_name;
-            if(first_name.indexOf("") !== -1 || last_name.indexOf("") !== -1){
-              first = first_name.replace(/\s/g, "")
-              last = last_name.replace(/\s/g, "")
+        emailArr.push(obj.email)
+        if(email === obj.email){
+          hash = obj.password
+          bcrypt.compare(password, hash, (err, res) => {
+            console.log(res)
+
+            if(res) {
+              this.setState({first_name: obj.first_name})
+              this.setState({last_name: obj.last_name})
+              var first_name = this.state.first_name;
+              var last_name = this.state.last_name;
+                if(first_name.indexOf("") !== -1 || last_name.indexOf("") !== -1){
+                  first = first_name.replace(/\s/g, "")
+                  last = last_name.replace(/\s/g, "")
+                }
+              fullname = first+" "+last
+              this.setState({fullname: fullname})
+              this.setUser(data)
+            } else {
+              alert("PASSWORD");
             }
-          fullname = first+" "+last
-          this.setState({fullname: fullname})
-          this.setUser(data)
+          })
         }
-      })
-      if (arr.indexOf(email) === -1 || arr.indexOf(password) === -1) {
-         alert("WRONG LOGIN or PASSWORD");
+    })
+    if(emailArr.indexOf(email) === -1){
+      alert("WRONG EMAIL")
     }
   })
-  }
+}
 
 
 
