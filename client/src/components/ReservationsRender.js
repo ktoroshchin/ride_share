@@ -12,15 +12,14 @@ class ReservationsRender extends Component {
   };
 
   componentDidMount(){
-      axios.get('/admin').then(response => {
-        this.setState({
-          reservations: response.data.filter(driver => driver.driver_name === this.state.driver_fullName)
-        })
+    axios.get('/admin').then(response => {
+      this.setState({
+        reservations: response.data.filter(driver => driver.driver_name === this.state.driver_fullName)
       })
+    })
   }
 
   render() {
-
     return(
       <div className="container">
         {this.state.reservations.map (({ id, first_name, leaving_from, going_to,
@@ -32,13 +31,9 @@ class ReservationsRender extends Component {
                 isConfirmed={is_confirmed} message={message} created_at={created_at} >
               </SingleReservationRender>
             </div>
-)})}
+          )})}
       </div>
     );
   }
 }
-
-
-
-
 export default ReservationsRender;

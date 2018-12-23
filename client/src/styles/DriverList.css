@@ -26,6 +26,11 @@
   !important
 }
 
+.ar-button{
+  margin-bottom: 0.4em
+  !important;
+}
+
 .arrow {
 position: absolute;
 margin-left: 4em;

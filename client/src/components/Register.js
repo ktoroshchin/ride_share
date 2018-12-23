@@ -130,7 +130,7 @@ export default class Register extends Component {
 
 
   render() {
-    const { redirect } = this.state;
+  const { redirect } = this.state;
 
     if( redirect ) {
       return <Redirect to='/my-reservations'/>
@@ -169,6 +169,5 @@ export default class Register extends Component {
     </Form>
     </div>
     )
-
-    }
   }
+}

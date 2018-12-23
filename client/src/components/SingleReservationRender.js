@@ -82,7 +82,6 @@ render() {
   }
 
   return (
-
     <div className="col-xs-12 accordion" id="accordionExample">
       <div className="card">
         <div className="card-header" id="headingOne">
@@ -95,9 +94,7 @@ render() {
             </button>
         </div>
         <div className="container delete-button">
-
             <button onClick={this.handleDelete} id={id}  className="btn btn-link delete" type="button">Delete</button>
-
         </div>
       <Collapse isOpen={this.state.collapse}>
           <div id="collapseOne">
@@ -121,5 +118,4 @@ render() {
     )
   }
 }
-
 export default SingleReservationRender;

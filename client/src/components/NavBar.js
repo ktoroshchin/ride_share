@@ -27,48 +27,48 @@ class NavBar extends Component {
 
 
 
-render(){
-  const username = this.props.getUserName();
+  render(){
+    const username = this.props.getUserName();
 
-  if(username === undefined){
-  return(
-  <div className="top-nav">
-    <Navbar className="navbar" dark expand="md">
-      <NavbarBrand className="logo" href="/">RideShare</NavbarBrand>
-      <NavbarToggler onClick={this.toggle} />
-      <Collapse isOpen={this.state.isOpen} navbar>
-        <Nav className="ml-auto" navbar>
-          <NavItem >
-            <NavLink href="/login">DRIVER LOGIN</NavLink>
-          </NavItem>
-          <NavItem >
-            <NavLink href="/register">DRIVER REGISTER</NavLink>
-          </NavItem>
-        </Nav>
-      </Collapse>
-    </Navbar>
-    </div>
-  )}
-  return(
-          <div className="top-nav">
-            <Navbar dark expand="md">
-              <NavbarBrand className="logo" href="/">RideShare</NavbarBrand>
-              <NavbarToggler onClick={this.toggle} />
-              <Collapse isOpen={this.state.isOpen} navbar>
-                <Nav className="ml-auto" navbar>
-                <NavItem><span className="greeting">Hello, {username}</span>
-                  <NavItem>
-                    <NavLink href="/my-reservations">RESERVATIONS</NavLink>
-                  </NavItem>
-                  <NavItem onClick={this.props.deleteUser}>
-                    <NavLink href="/">LOGOUT</NavLink>
-                  </NavItem>
-                </NavItem>
-                </Nav>
-              </Collapse>
-            </Navbar>
-         </div>
-      )
+    if(username === undefined){
+    return(
+    <div className="top-nav">
+      <Navbar className="navbar" dark expand="md">
+        <NavbarBrand className="logo" href="/">RideShare</NavbarBrand>
+        <NavbarToggler onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar>
+          <Nav className="ml-auto" navbar>
+            <NavItem >
+              <NavLink href="/login">DRIVER LOGIN</NavLink>
+            </NavItem>
+            <NavItem >
+              <NavLink href="/register">DRIVER REGISTER</NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+      </div>
+    )}
+    return(
+      <div className="top-nav">
+        <Navbar dark expand="md">
+          <NavbarBrand className="logo" href="/">RideShare</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+            <NavItem><span className="greeting">Hello, {username}</span>
+              <NavItem>
+                <NavLink href="/my-reservations">RESERVATIONS</NavLink>
+              </NavItem>
+              <NavItem onClick={this.props.deleteUser}>
+                <NavLink href="/">LOGOUT</NavLink>
+              </NavItem>
+            </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+     </div>
+    )
   }
 }
 export default NavBar;

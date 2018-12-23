@@ -91,7 +91,7 @@ export default class Login extends Component {
               this.setState({fullname: fullname})
               this.setUser(data)
             } else {
-              alert("PASSWORD");
+              alert("WRONG PASSWORD");
             }
           })
         }
@@ -102,33 +102,30 @@ export default class Login extends Component {
   })
 }
 
-
-
-
-render(){
+  render(){
   const { redirect } = this.state;
 
 
   if( redirect ) {
     return <Redirect to='/my-reservations'/>
   }
-  return(
-    <div className="container">
-      <Form className="row login-form" onSubmit={this.handleSubmit}>
-        <h3 className="login">Login</h3>
-          <FormGroup>
-            <Label for="exampleEmail">Email</Label>
-            <Input type="email" name="email" id="exampleEmail" placeholder=""
-            onChange={this.handleEmail}/>
-          </FormGroup>
-          <FormGroup>
-            <Label for="examplePassword">Password</Label>
-            <Input type="password" name="password" id="examplePassword" placeholder=""
-            onChange={this.handlePassword}/>
-          </FormGroup>
-          <button type="submit" className="btn submit-button">Submit</button>
-          <Button tag={Link} to="/" type="cancel" className="btn cancel-button">Cancel</Button>
-      </Form>
+    return(
+      <div className="container">
+        <Form className="row login-form" onSubmit={this.handleSubmit}>
+          <h3 className="login">Login</h3>
+            <FormGroup>
+              <Label for="exampleEmail">Email</Label>
+              <Input type="email" name="email" id="exampleEmail" placeholder=""
+              onChange={this.handleEmail}/>
+            </FormGroup>
+            <FormGroup>
+              <Label for="examplePassword">Password</Label>
+              <Input type="password" name="password" id="examplePassword" placeholder=""
+              onChange={this.handlePassword}/>
+            </FormGroup>
+            <button type="submit" className="btn submit-button">Submit</button>
+            <Button tag={Link} to="/" type="cancel" className="btn cancel-button">Cancel</Button>
+        </Form>
       </div>
     )
   }

@@ -23,10 +23,8 @@ class Confirmation extends Component {
     setTimeout(() => this.setState({ loading: false }), 4000);
   }
 
-
   render(){
     const { loading } = this.state;
-
       if(loading) {
         return (<div className="preloading-title-submitting">Submitting your reservation...</div>)
       }

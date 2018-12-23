@@ -52,22 +52,14 @@ const deleteUser = function() {
 
 
 
-
-
-
-
 class App extends Component {
     state = {
       loading: true,
     };
-
-
-
-
-    componentDidMount() {
-      // the setTimeout just simulates an async action, after which the component will render the content
-      setTimeout(() => this.setState({ loading: false }), 1500);
-    }
+  componentDidMount() {
+    // the setTimeout just simulates an async action, after which the component will render the content
+    setTimeout(() => this.setState({ loading: false }), 1500);
+  }
 
   render() {
     const { loading } = this.state;
@@ -81,18 +73,15 @@ class App extends Component {
           <div className="App">
             <NavBar deleteUser={deleteUser} getUserName={getUserName} />
             <Container className="mainContainer">
-
               <Route exact path="/" render={() => <div> <div><DriverList/></div><ReservationForm getUserName={getUserName}/></div>}/>
               <Route path="/register" render={() => <Register setUserFullName={setUserFullName} setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserID={getUserID}/>} />
               <Route path="/login" render={() => <Login setUserFullName={setUserFullName} setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserName={getUserName} getUserID={getUserID}/>} />
               <Route path="/my-reservations" render={() => <ReservationsRender getUserFullName={getUserFullName}  getUserLastName={getUserLastName} getUserName={getUserName}/>} />
               <Route path="/confirmation" component={Confirmation}/>
             </Container>
-        </div>
+          </div>
         </Router>
-
     );
   }
 }
-
 export default App;
