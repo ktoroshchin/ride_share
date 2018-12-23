@@ -16,19 +16,11 @@ class SingleReservationRender extends Component {
     redirect: false,
   };
 
-
-
   toggle = () => {
       this.setState({
         collapse: !this.state.collapse
       })
     }
-
-
-
-
-
-
 
   //if id exist in local storage notification removes//
   componentDidMount(){
@@ -39,7 +31,6 @@ class SingleReservationRender extends Component {
         })
       }
     }
-
 
   //store id in local storage on click and remove notification, do not store duplicates id's//
   handler = () => {
@@ -68,9 +59,6 @@ class SingleReservationRender extends Component {
       redirect: true,
     })
   }
-
-
-
 
 render() {
   const { id, index, firstName, leavingFrom, goingTo, phoneNumber, email, departureDate, departureTime, numberOfPeople, message} = this.props;
