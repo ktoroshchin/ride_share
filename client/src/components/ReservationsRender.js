@@ -1,9 +1,7 @@
 /*jshint esversion: 6 */
 import React, { Component } from "react";
-import { ListGroupItem, ListGroup, Collapse } from 'reactstrap';
 import axios from 'axios';
 import SingleReservationRender from './SingleReservationRender';
-import LoggedInNavBar from './LoggedInNavBar';
 
 class ReservationsRender extends Component {
   state = {
@@ -22,8 +20,6 @@ class ReservationsRender extends Component {
   }
 
   render() {
-    const { id } = this.props
-
 
     return(
       <div className="container">

@@ -1,6 +1,5 @@
 /*jshint esversion: 6 */
 import React, { Component } from "react";
-import PhoneNumber from 'react-phone-number'
 import { ListGroupItem, ListGroup, Collapse } from 'reactstrap';
 
 

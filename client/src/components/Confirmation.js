@@ -1,7 +1,5 @@
 /*jshint esversion: 6 */
 import React, { Component } from "react";
-import { Badge } from 'reactstrap';
-import Login from './Login';
 
 const ColoredLine = ({ color }) => (
     <hr

@@ -1,8 +1,6 @@
 
 /*jshint esversion: 6 */
 import React, { Component } from "react";
-import { withRouter, Link } from "react-router-dom";
-import LoggedInNavBar from "./LoggedInNavBar";
 import {
   Collapse,
   Navbar,
@@ -11,10 +9,7 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+} from 'reactstrap';
 
 class NavBar extends Component {
 

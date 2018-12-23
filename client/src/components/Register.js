@@ -108,12 +108,12 @@ export default class Register extends Component {
     event.preventDefault()
     const { email, password, first_name, last_name, vehicle_type } = this.state;
 
-    if(!this.state.first_name || !this.state.email || !this.state.password ||
-    !this.state.last_name || !this.state.vehicle_type){
+    if(!first_name || !email || !password ||
+    !last_name || !vehicle_type){
       alert("Please fill out all required fields")
     } else {
       bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(this.state.password, salt, (err, hash) => {
+        bcrypt.hash(password, salt, (err, hash) => {
 
           this.setState({
             password: hash
@@ -131,7 +131,7 @@ export default class Register extends Component {
 
   render() {
     const { redirect } = this.state;
-    
+
     if( redirect ) {
       return <Redirect to='/my-reservations'/>
     }

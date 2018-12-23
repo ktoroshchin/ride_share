@@ -70,8 +70,8 @@ export default class Login extends Component {
     let fullname;
     let hash;
 
-    axios.get('/login').then(data => {
-      data.data.map(obj => {
+    axios.get('/login').then((data) => {
+      data.data.forEach(obj => {
         emailArr.push(obj.email)
         if(email === obj.email){
           hash = obj.password

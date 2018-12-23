@@ -1,8 +1,7 @@
 
 /*jshint esversion: 6 */
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import { Redirect } from 'react-router';
+import { Form, FormGroup, Label, Input } from 'reactstrap';
 import axios from 'axios';
 import Confirmation from './Confirmation'
 
@@ -86,7 +85,7 @@ export default class RegistrationForm extends Component {
                   onChange={this.onChangeItem}>
                   <option defaultValue></option>
 
-                  <option>Test Testing</option>
+                  <option>Test5 Testing5</option>
                 </Input>
               </FormGroup>
 
@@ -160,7 +159,7 @@ export default class RegistrationForm extends Component {
                   <Input type="textarea" name="message" id="exampleDate" placeholder=""
                     onChange={this.handleMesssage} />
                 </FormGroup>
-                <button className="reservation-submit" type="submit" className="btn reservation-submit">Submit</button>
+                <button type="submit" className="btn reservation-submit">Submit</button>
               </Form>
         </div>
       </div>

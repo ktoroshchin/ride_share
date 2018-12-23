@@ -1,10 +1,9 @@
 /*jshint esversion: 6 */
 
 import React, { Component } from 'react';
-import axios from 'axios';
 import Cookies from 'universal-cookie';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { Container} from 'reactstrap';
+import { Container } from 'reactstrap';
 
 import ReservationsRender from './ReservationsRender'
 import ReservationForm from './ReservationForm'

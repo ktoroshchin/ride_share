@@ -74,7 +74,7 @@ class SingleReservationRender extends Component {
 
 render() {
   const { id, index, firstName, leavingFrom, goingTo, phoneNumber, email, departureDate, departureTime, numberOfPeople, message} = this.props;
-  const { visibility, redirect } = this.state;
+  const { redirect } = this.state;
 
 
   if( redirect ){
@@ -86,7 +86,7 @@ render() {
     <div className="col-xs-12 accordion" id="accordionExample">
       <div className="card">
         <div className="card-header" id="headingOne">
-            <button className="container" onClick={this.toggle} className="btn btn-link" type="button">
+            <button className="container btn btn-link" onClick={this.toggle} type="button">
               <div onClick={this.handler}  className="row container-for-order" col-lg-12>
                   <span className="col-12">Order #{index}</span>
                   <span className="col-12 departDate">Departure Date: {departureDate}</span>
