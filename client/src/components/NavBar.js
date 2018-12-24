@@ -48,7 +48,8 @@ class NavBar extends Component {
         </Collapse>
       </Navbar>
       </div>
-    )}
+    )
+  }
     return(
       <div className="top-nav">
         <Navbar dark expand="md">
@@ -56,14 +57,13 @@ class NavBar extends Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-            <NavItem><span className="greeting">Hello, {username}</span>
-              <NavItem>
-                <NavLink href="/my-reservations">RESERVATIONS</NavLink>
-              </NavItem>
-              <NavItem onClick={this.props.deleteUser}>
-                <NavLink href="/">LOGOUT</NavLink>
-              </NavItem>
-            </NavItem>
+                <NavItem>
+                  <span className="greeting">Hello, {username}</span>
+                  <NavLink href="/my-reservations">RESERVATIONS</NavLink>
+                </NavItem>
+                <NavItem className="logout-link" onClick={this.props.deleteUser}>
+                  <NavLink href="/">LOGOUT</NavLink>
+                </NavItem>
             </Nav>
           </Collapse>
         </Navbar>

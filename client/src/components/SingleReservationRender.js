@@ -70,14 +70,14 @@ render() {
   }
 
   return (
-    <div className="col-xs-12 accordion" id="accordionExample">
+    <div className="col-12 accordion" id="accordionExample">
       <div className="card">
         <div className="card-header" id="headingOne">
             <button className="container btn btn-link" onClick={this.toggle} type="button">
-              <div onClick={this.handler}  className="row container-for-order" col-lg-12>
+              <div onClick={this.handler}  className="row container-for-order">
                   <span className="col-12">Order #{index}</span>
                   <span className="col-12 departDate">Departure Date: {departureDate}</span>
-                  {this.state.remove ? (<span className="col-12"><Badge className="badge" >New</Badge></span>):<span col-12><Badge style={{visibility:"hidden"}}>New</Badge></span>}
+                  {this.state.remove ? (<span className="col-12"><Badge className="badge" >New</Badge></span>):<span className="col-12"><Badge style={{visibility:"hidden"}}>New</Badge></span>}
               </div>
             </button>
         </div>

@@ -10,6 +10,7 @@ const adminRoute = require('./routes/admin');
 const homeRoute = require('./routes/home');
 const registerRoute = require('./routes/register');
 const loginRoute = require('./routes/login');
+const listDriverNames = require('./routes/driverInfo');
 
 const knexConfig = require('./knexfile');
 const knexLogger = require('knex-logger');
@@ -28,7 +29,8 @@ app.use(knexLogger(knex));
 app.use('/admin', adminRoute(knex));
 app.use('/home', homeRoute(knex));
 app.use('/register', registerRoute(knex));
-app.use('/login', loginRoute(knex)),
+app.use('/login', loginRoute(knex));
+app.use('/driverInfo', listDriverNames(knex));
 
 
 app.listen(PORT, () => {

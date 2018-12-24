@@ -22,9 +22,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #ac3b61;
+  color: inherit;
   color: white;
+  background-color: #ac3b61;
   height: 4em;
+}
+
+a:hover {
+  color: white;
+  text-decoration:none;
+  cursor:pointer;
 }
 
 #exampleEmail,#examplePassword,#first_name,#last_name,#vehicle_type {

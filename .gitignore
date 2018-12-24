@@ -1,4 +1,4 @@
 node_modules/
 .env
 *.log
-knexfile.js
+knexfile.js.DS_Store

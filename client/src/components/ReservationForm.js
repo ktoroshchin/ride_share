@@ -6,7 +6,7 @@ import axios from 'axios';
 import Confirmation from './Confirmation'
 
 
-export default class RegistrationForm extends Component {
+export default class ReservationForm extends Component {
 
   state = {
     driver_name: '',
@@ -20,7 +20,10 @@ export default class RegistrationForm extends Component {
     number_of_people: '',
     message: '',
     redirect: false,
+    driverList: [],
   };
+
+
 
   onChangeItem = (event) => {
     const target = event.target;
@@ -54,18 +57,33 @@ export default class RegistrationForm extends Component {
         alert("All fields required to make reservation, EXCEPT 'Message to Driver'")
       } else {
 
-      axios.post('/home', { driver_name: driver_name, departure_date: departure_date,
-         first_name: first_name, leaving_from: leaving_from, going_to: going_to,
-         departure_time: departure_time, phone_number: phone_number, email: email,
-         number_of_people: number_of_people, message: message}
-      ).then( data  => {
-        console.log(data.data);
-      })
+        axios.post('/home', { driver_name: driver_name, departure_date: departure_date,
+           first_name: first_name, leaving_from: leaving_from, going_to: going_to,
+           departure_time: departure_time, phone_number: phone_number, email: email,
+           number_of_people: number_of_people, message: message}
+        ).then( data  => {
+          console.log(data.data);
+        })
+        this.setState({
+          redirect: true
+        })
+      }
+    }
+
+
+  componentWillMount(){
+    this.getDrivers()
+    }
+
+  getDrivers = () => {
+    axios.get('/driverInfo')
+    .then( data  => {
       this.setState({
-        redirect: true
+        driverList: data.data
+        })
       })
     }
-    }
+
 
   render() {
   const { redirect } = this.state
@@ -84,7 +102,11 @@ export default class RegistrationForm extends Component {
             <Input type="select" name="driver_name" id="selectDriver" placeholder=""
               onChange={this.onChangeItem}>
               <option defaultValue></option>
-              <option>Test5 Testing5</option>
+              {this.state.driverList.map(( driver ) =>
+            {
+              return (<option>{driver.first_name} {driver.last_name}</option>)
+            })}
+
             </Input>
           </FormGroup>
             <FormGroup>

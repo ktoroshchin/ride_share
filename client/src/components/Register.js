@@ -104,28 +104,28 @@ export default class Register extends Component {
         this.setState({redirect:true});
     }
 
-  handleSubmit = (event) => {
-    event.preventDefault()
-    const { email, password, first_name, last_name, vehicle_type } = this.state;
+    handleSubmit = (event) => {
+      event.preventDefault()
+      const { email, password, first_name, last_name, vehicle_type } = this.state;
 
-    if(!first_name || !email || !password ||
-    !last_name || !vehicle_type){
-      alert("Please fill out all required fields")
-    } else {
-      bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(password, salt, (err, hash) => {
+      if(!first_name || !email || !password ||
+      !last_name || !vehicle_type){
+        alert("Please fill out all required fields")
+      } else {
+        bcrypt.genSalt(10, (err, salt) => {
+          bcrypt.hash(password, salt, (err, hash) => {
 
-          this.setState({
-            password: hash
-          })
-          axios.post('/register', { email: email, password: hash, first_name: first_name, last_name: last_name,
-          vehicle_type: vehicle_type }).then(data => {
-            this.setUser(data)
+            this.setState({
+              password: hash
+            })
+            axios.post('/register', { email: email, password: hash, first_name: first_name, last_name: last_name,
+            vehicle_type: vehicle_type }).then(data => {
+              this.setUser(data)
+            });
           });
         });
-      });
+      }
     }
-  }
 
 
 
@@ -165,7 +165,7 @@ export default class Register extends Component {
           onChange={this.handleVehicleType}/>
         </FormGroup>
       <button type="submit" className="btn submit-button">Submit</button>
-      <Button tag={Link} to="/" type="cancel" className="btn cancel-button">Cancel</Button>
+      <a href="/" className="btn cancel-button">Cancel</a>
     </Form>
     </div>
     )

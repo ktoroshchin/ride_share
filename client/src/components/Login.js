@@ -64,7 +64,6 @@ export default class Login extends Component {
     event.preventDefault()
     const { email, password } = this.state;
     let emailArr = [];
-    console.log(emailArr)
     let first;
     let last;
     let fullname;
@@ -76,8 +75,6 @@ export default class Login extends Component {
         if(email === obj.email){
           hash = obj.password
           bcrypt.compare(password, hash, (err, res) => {
-            console.log(res)
-
             if(res) {
               this.setState({first_name: obj.first_name})
               this.setState({last_name: obj.last_name})
@@ -124,7 +121,7 @@ export default class Login extends Component {
               onChange={this.handlePassword}/>
             </FormGroup>
             <button type="submit" className="btn submit-button">Submit</button>
-            <Button tag={Link} to="/" type="cancel" className="btn cancel-button">Cancel</Button>
+            <a href="/" className="btn cancel-button">Cancel</a>
         </Form>
       </div>
     )
