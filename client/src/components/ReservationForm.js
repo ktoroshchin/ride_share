@@ -104,7 +104,7 @@ export default class ReservationForm extends Component {
               <option defaultValue></option>
               {this.state.driverList.map(( driver ) =>
             {
-              return (<option>{driver.first_name} {driver.last_name}</option>)
+              return (<option key={driver.id}>{driver.first_name} {driver.last_name}</option>)
             })}
 
             </Input>

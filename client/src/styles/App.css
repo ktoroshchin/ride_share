@@ -64,8 +64,8 @@ code {
 @media (min-width: 330px){
   .arrow{
   position: absolute;
-  margin-left: 2em;
-  bottom: 1em;
+  margin-left: 3.3em;
+  bottom: -0.5em;
   }
 }
 

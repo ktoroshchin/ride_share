@@ -3,9 +3,8 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import bcrypt from 'bcryptjs';
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Form, FormGroup, Label, Input } from 'reactstrap';
 import { Redirect } from 'react-router'
-import { Link } from "react-router-dom";
 
 export default class Login extends Component {
 
