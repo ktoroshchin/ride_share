@@ -34,7 +34,7 @@ class NavBar extends Component {
     return(
     <div className="top-nav">
       <Navbar className="navbar" dark expand="md">
-        <NavbarBrand className="logo" href="/">RideShare</NavbarBrand>
+        <NavbarBrand className="logo" href="/">RideSsshare</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
@@ -53,7 +53,7 @@ class NavBar extends Component {
     return(
       <div className="top-nav">
         <Navbar dark expand="md">
-          <NavbarBrand className="logo" href="/">RideShare</NavbarBrand>
+          <NavbarBrand className="logo" href="/">RideSsshare</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
