@@ -42,7 +42,7 @@ if (process.env.NODE_ENV === 'production'){
     console.log("HI from App.get")
     console.log(req)
     console.log(res)
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'static' 'index.html'))
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
   })
 }
 
