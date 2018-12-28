@@ -1,14 +1,17 @@
 // Update with your config settings.
 require('dotenv').config();
 
-module.exports = {
+const options = process.env.NODE_ENV === 'production' ?
 
-  development: {
+module.exports = {
+  client: 'postgresql',
+  connection: process.env.DATABASE_URL, searchPath: ['public']
+} :
+module.exports = {
     client: 'postgresql',
     connection: {
       host    : process.env.DB_HOST,
       database: process.env.DB_NAME,
-      port    : process.env.DB_PORT,
     },
     pool: {
       min: 2,
@@ -17,10 +20,10 @@ module.exports = {
     migrations: {
       directory: './db/migrations',
       tableName: 'migrations'
-    },
-    seeds: {
-      directory: './db/seeds'
+      },
     }
-  }
+  
 
-};
+
+  module.exports = options;
+
