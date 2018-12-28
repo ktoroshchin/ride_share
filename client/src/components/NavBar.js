@@ -8,7 +8,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  
+
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
@@ -40,10 +40,10 @@ class NavBar extends Component {
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem >
-              <NavLink to="/login">DRIVER LOGIN</NavLink>
+              <NavLink className="nav-link" to="/login">DRIVER LOGIN</NavLink>
             </NavItem>
             <NavItem >
-              <NavLink to="/register">DRIVER REGISTER</NavLink>
+              <NavLink className="nav-link" to="/register">DRIVER REGISTER</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
@@ -60,10 +60,10 @@ class NavBar extends Component {
             <Nav className="ml-auto" navbar>
                 <NavItem>
                   <span className="greeting">Hello, {username}</span>
-                  <NavLink to="/my-reservations">RESERVATIONS</NavLink>
+                  <NavLink className="nav-link" to="/my-reservations">RESERVATIONS</NavLink>
                 </NavItem>
                 <NavItem className="logout-link" onClick={this.props.deleteUser}>
-                  <NavLink to="/">LOGOUT</NavLink>
+                  <NavLink className="nav-link" to="/">LOGOUT</NavLink>
                 </NavItem>
             </Nav>
           </Collapse>
