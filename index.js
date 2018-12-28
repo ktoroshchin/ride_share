@@ -35,10 +35,14 @@ app.use('/driverInfo', listDriverNames(knex));
 
 if (process.env.NODE_ENV === 'production'){
   app.use(express.static('client/build'));
+  app.use(express.static('client/build/static'));
 
   const path = require('path');
   app.get('/*', function(req, res) {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+    console.log("HI from App.get")
+    console.log(req)
+    console.log(res)
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'static' 'index.html'))
   })
 }
 
