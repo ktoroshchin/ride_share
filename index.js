@@ -34,9 +34,7 @@ app.use('/register', registerRoute(knex));
 app.use('/driverInfo', listDriverNames(knex));
 
 if (process.env.NODE_ENV === 'production'){
-  app.use(express.static(__dirname));
-  app.use(express.static(path.join(__dirname,'client','build')));
-  // app.use(express.static('client/build'));
+  app.use(express.static('client/build'));
 
   const path = require('path');
   app.get('/*', function(req, res) {
