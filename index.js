@@ -29,8 +29,8 @@ app.use(knexLogger(knex));
 // Mount all resource routes
 app.use('/admin', adminRoute(knex));
 app.use('/home', homeRoute(knex));
-app.use('/register', registerRoute(knex));
 app.use('/login', loginRoute(knex));
+app.use('/register', registerRoute(knex));
 app.use('/driverInfo', listDriverNames(knex));
 
 if (process.env.NODE_ENV === 'production'){

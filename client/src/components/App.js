@@ -74,8 +74,8 @@ class App extends Component {
             <NavBar deleteUser={deleteUser} getUserName={getUserName} />
             <Container className="mainContainer">
               <Route exact path="/" render={() => <div> <div><DriverList/></div><ReservationForm getUserName={getUserName}/></div>}/>
-              <Route path="/register" render={() => <Register setUserFullName={setUserFullName} setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserID={getUserID}/>} />
               <Route path="/login" render={() => <Login setUserFullName={setUserFullName} setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserName={getUserName} getUserID={getUserID}/>} />
+              <Route path="/register" render={() => <Register setUserFullName={setUserFullName} setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserID={getUserID}/>} />
               <Route path="/my-reservations" render={() => <ReservationsRender getUserFullName={getUserFullName}  getUserLastName={getUserLastName} getUserName={getUserName}/>} />
               <Route path="/confirmation" component={Confirmation}/>
             </Container>
