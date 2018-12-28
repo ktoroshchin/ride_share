@@ -9,7 +9,7 @@ module.exports = (knex) => {
     knex("drivers")
       .select("*")
       .then((data) => {
-        res.send(data);
+        res.json(data);
       })
       .catch((err) => {
         console.log(err);

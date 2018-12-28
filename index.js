@@ -3,7 +3,7 @@
 require('dotenv').config();
 
 const PORT = process.env.PORT || 8000;
-const ENV = process.env.ENV || 'development';
+// const ENV = process.env.ENV || 'development';
 const options = require('./knexfile')
 
 const express = require('express');
