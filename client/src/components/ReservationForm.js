@@ -62,7 +62,6 @@ export default class ReservationForm extends Component {
            departure_time: departure_time, phone_number: phone_number, email: email,
            number_of_people: number_of_people, message: message}
         ).then( data  => {
-          console.log(data.data);
         })
         this.setState({
           redirect: true

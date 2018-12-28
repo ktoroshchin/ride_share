@@ -8,7 +8,6 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
@@ -62,8 +61,8 @@ class NavBar extends Component {
                   <span className="greeting">Hello, {username}</span>
                   <NavLink className="nav-link" to="/my-reservations">RESERVATIONS</NavLink>
                 </NavItem>
-                <NavItem className="logout-link" onClick={this.props.deleteUser}>
-                  <NavLink className="nav-link" to="/">LOGOUT</NavLink>
+                <NavItem  onClick={this.props.deleteUser}>
+                  <NavLink className="nav-link logout-link" to="/">LOGOUT</NavLink>
                 </NavItem>
             </Nav>
           </Collapse>

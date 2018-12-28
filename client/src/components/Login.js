@@ -45,9 +45,6 @@ export default class Login extends Component {
     }
   }
 
-  handleCancelButton = () => {
-    return <Redirect to='/'/>
-  }
 
   setUser = (data) => {
     this.props.setUserFullName(this.state.fullname);

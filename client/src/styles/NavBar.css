@@ -24,8 +24,8 @@
   height: 60px;
 }
 
-.navbar-nav .logout-link {
-  margin-top: 1.5em;
+.navbar-dark .navbar-nav .nav-link.logout-link {
+  margin-top: 1.75em;
 }
 
 .greeting{

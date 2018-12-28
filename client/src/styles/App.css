@@ -86,9 +86,12 @@ code {
   bottom: 1em;
   }
 }
-@media (min-width: 770px) and (max-width: 2000px){
-  .navbar-nav .logout-link {
-    margin-top: 1.5em;
+
+
+
+@media (max-width: 669px){
+.navbar-dark .navbar-nav .nav-link.logout-link{
+    margin-top: 0.5em;
   }
 }
 
