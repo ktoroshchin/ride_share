@@ -3,4 +3,4 @@ node_modules/
 *.log
 knexfile.js
 .DS_Store
-.dbHerokuShortcut.md
+.dbHerokuShortcut
