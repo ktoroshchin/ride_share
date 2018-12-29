@@ -9,8 +9,6 @@ class ReservationsRender extends Component {
     driverID: this.props.getUserID(),
     driver_name: this.props.getUserName(),
     driver_lastName: this.props.getUserLastName(),
-    driver_fullName: this.props.getUserFullName(),
-
   };
 
   componentDidMount(){

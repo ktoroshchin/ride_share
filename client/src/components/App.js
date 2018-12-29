@@ -25,9 +25,6 @@ const setUserFirstName = function(userFirstName) {
 const setUserLastName = function(userLastName) {
   cookies.set('userLastName', userLastName, {path: '/'});
 }
-const setUserFullName = function(userFullName) {
-  cookies.set('userFullName', userFullName, {path: '/'});
-}
 
 const getUserID = function() {
   return cookies.get('userID');
@@ -38,9 +35,7 @@ const getUserName = function() {
 const getUserLastName = function() {
   return cookies.get('userLastName');
 }
-const getUserFullName = function(){
-  return cookies.get('userFullName');
-}
+
 
 
 const deleteUser = function() {
@@ -74,9 +69,9 @@ class App extends Component {
             <NavBar deleteUser={deleteUser} getUserName={getUserName} />
             <Container className="mainContainer">
               <Route exact path="/" render={() => <div> <div><DriverList/></div><ReservationForm getUserName={getUserName}/></div>}/>
-              <Route path="/login" render={() => <Login setUserFullName={setUserFullName} setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserName={getUserName} getUserID={getUserID}/>} />
-              <Route path="/register" render={() => <Register setUserFullName={setUserFullName} setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserID={getUserID}/>} />
-              <Route path="/my-reservations" render={() => <ReservationsRender getUserID={getUserID} getUserFullName={getUserFullName}  getUserLastName={getUserLastName} getUserName={getUserName}/>} />
+              <Route path="/login" render={() => <Login setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserName={getUserName} getUserID={getUserID}/>} />
+              <Route path="/register" render={() => <Register  setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserID={getUserID}/>} />
+              <Route path="/my-reservations" render={() => <ReservationsRender getUserID={getUserID}   getUserLastName={getUserLastName} getUserName={getUserName}/>} />
               <Route path="/confirmation" component={Confirmation}/>
             </Container>
           </div>

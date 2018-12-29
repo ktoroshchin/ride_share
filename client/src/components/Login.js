@@ -14,7 +14,6 @@ export default class Login extends Component {
     password: '',
     first_name: '',
     last_name: '',
-    fullname: '',
     redirect: false,
   }
 
@@ -48,7 +47,6 @@ export default class Login extends Component {
 
 
   setUser = (data) => {
-    this.props.setUserFullName(this.state.fullname);
     this.props.setUserFirstName(this.state.first_name);
     this.props.setUserLastName(this.state.last_name);
     this.props.setUserID(this.state.userID);
@@ -62,9 +60,6 @@ export default class Login extends Component {
     event.preventDefault()
     const { email, password } = this.state;
     let emailArr = [];
-    let first;
-    let last;
-    let fullname;
     let hash;
 
     axios.get('/login').then((data) => {
@@ -79,14 +74,6 @@ export default class Login extends Component {
                 last_name: obj.last_name,
                 userID: obj.id
               })
-              var first_name = this.state.first_name;
-              var last_name = this.state.last_name;
-                if(first_name.indexOf("") !== -1 || last_name.indexOf("") !== -1){
-                  first = first_name.replace(/\s/g, "")
-                  last = last_name.replace(/\s/g, "")
-                }
-              fullname = first+" "+last
-              this.setState({fullname: fullname})
               this.setUser(data)
             } else {
               alert("WRONG PASSWORD");

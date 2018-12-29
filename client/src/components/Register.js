@@ -85,18 +85,6 @@ export default class Register extends Component {
     }
 
     setUser = (data) => {
-      let first;
-      let last;
-      let first_name = this.state.first_name;
-      let last_name = this.state.last_name;
-      if(first_name.indexOf("") !== -1 || last_name.indexOf("") !== -1){
-        first = first_name.replace(/\s/g, "")
-        last = last_name.replace(/\s/g, "")
-      }
-        const fullName = first+" "+last
-
-
-        this.props.setUserFullName(fullName)
         this.props.setUserFirstName(this.state.first_name);
         this.props.setUserLastName(this.state.last_name);
         this.props.setUserID(data.data[0].id);
