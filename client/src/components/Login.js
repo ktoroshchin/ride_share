@@ -9,6 +9,7 @@ import { Redirect } from 'react-router'
 export default class Login extends Component {
 
   state = {
+    userID: '',
     email: '',
     password: '',
     first_name: '',
@@ -50,6 +51,7 @@ export default class Login extends Component {
     this.props.setUserFullName(this.state.fullname);
     this.props.setUserFirstName(this.state.first_name);
     this.props.setUserLastName(this.state.last_name);
+    this.props.setUserID(this.state.userID);
     this.setState({redirect:true});
 
   }
@@ -72,8 +74,11 @@ export default class Login extends Component {
           hash = obj.password
           bcrypt.compare(password, hash, (err, res) => {
             if(res) {
-              this.setState({first_name: obj.first_name})
-              this.setState({last_name: obj.last_name})
+              this.setState({
+                first_name: obj.first_name,
+                last_name: obj.last_name,
+                userID: obj.id
+              })
               var first_name = this.state.first_name;
               var last_name = this.state.last_name;
                 if(first_name.indexOf("") !== -1 || last_name.indexOf("") !== -1){

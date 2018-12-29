@@ -32,17 +32,15 @@ class SingleReservationRender extends Component {
       }
     }
 
-  //store id in local storage on click and remove notification, do not store duplicates id's//
+  //store created_at in local storage on click and removes notification//
   handler = () => {
     let created_at = this.props.created_at
     let newTime = created_at.slice(11,22)
-    console.log(newTime)
     if(arr.indexOf(newTime) === -1){
       arr.push(newTime)
       localStorage.setItem('notification', JSON.stringify(arr))
       this.setState({
         remove:false,
-        id: this.props.id
       })
     }
   }

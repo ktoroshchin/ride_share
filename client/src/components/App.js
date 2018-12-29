@@ -76,7 +76,7 @@ class App extends Component {
               <Route exact path="/" render={() => <div> <div><DriverList/></div><ReservationForm getUserName={getUserName}/></div>}/>
               <Route path="/login" render={() => <Login setUserFullName={setUserFullName} setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserName={getUserName} getUserID={getUserID}/>} />
               <Route path="/register" render={() => <Register setUserFullName={setUserFullName} setUserFirstName={setUserFirstName} setUserLastName={setUserLastName} setUserID={setUserID} getUserID={getUserID}/>} />
-              <Route path="/my-reservations" render={() => <ReservationsRender getUserFullName={getUserFullName}  getUserLastName={getUserLastName} getUserName={getUserName}/>} />
+              <Route path="/my-reservations" render={() => <ReservationsRender getUserID={getUserID} getUserFullName={getUserFullName}  getUserLastName={getUserLastName} getUserName={getUserName}/>} />
               <Route path="/confirmation" component={Confirmation}/>
             </Container>
           </div>

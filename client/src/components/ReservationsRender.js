@@ -6,15 +6,18 @@ import SingleReservationRender from './SingleReservationRender';
 class ReservationsRender extends Component {
   state = {
     reservations: [],
+    driverID: this.props.getUserID(),
     driver_name: this.props.getUserName(),
     driver_lastName: this.props.getUserLastName(),
-    driver_fullName: this.props.getUserFullName()
+    driver_fullName: this.props.getUserFullName(),
+
   };
 
   componentDidMount(){
-    axios.get('/admin').then(response => {
+    let id = this.state.driverID;
+    axios.get('/admin/'+id).then(response => {
       this.setState({
-        reservations: response.data.filter(driver => driver.driver_name === this.state.driver_fullName)
+        reservations: response.data.filter(driver => driver)
       })
     })
   }
