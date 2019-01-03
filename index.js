@@ -13,7 +13,7 @@ const registerRoute = require('./routes/register');
 const loginRoute = require('./routes/login');
 const listDriverNames = require('./routes/driverInfo');
 
-const knexConfig = require('./knexfile');
+// const knexConfig = require('./knexfile');
 const knexLogger = require('knex-logger');
 const knex = require('knex')(options);
 

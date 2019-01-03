@@ -40,7 +40,7 @@ class Confirmation extends Component {
           <h3 className="col-12">Departure time: {this.props.departure_time}</h3>
           <h3 className="col-12">From: {this.props.leaving_from}</h3>
           <h3 className="col-12">To: {this.props.going_to}</h3>
-          <h5 className="col-12 thanks-from-rideshare">Thank you for using RideShare!</h5>
+          <h5 className="col-12 thanks-from-rideshare">Thank you for using RideSsshare!</h5>
         </div>
       </div>
     )
