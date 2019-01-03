@@ -31,6 +31,18 @@
   !important;
 }
 
+a {
+  color: black;
+}
+
+/* a:hover {
+  color: #123c69;
+} */
+
+a.a-link-driver-list:hover{
+  color: #123c69;
+}
+
 .arrow {
 position: absolute;
 margin-left: 4em;
