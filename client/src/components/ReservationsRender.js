@@ -7,8 +7,6 @@ class ReservationsRender extends Component {
   state = {
     reservations: [],
     driverID: this.props.getUserID(),
-    driver_name: this.props.getUserName(),
-    driver_lastName: this.props.getUserLastName(),
   };
 
   componentDidMount(){
