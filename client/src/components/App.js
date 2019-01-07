@@ -11,8 +11,10 @@ import Register from './Register'
 import Login from './Login'
 import Confirmation from './Confirmation'
 import NavBar from './NavBar'
+import decode from 'jwt-decode';
+import jsonwebtoken from 'jsonwebtoken'
 import DriverList from './DriverList';
-
+var jwt = require('jsonwebtoken');
 
 
 const cookies = new Cookies();
@@ -27,10 +29,12 @@ const setUserLastName = function(userLastName) {
 }
 
 const getUserID = function() {
-  return cookies.get('userID');
+    return jwt.decode(cookies.get('userID'));
+
 }
 const getUserName = function() {
-  return cookies.get('userFirstName');
+    return jwt.decode(cookies.get('userFirstName'));
+
 }
 const getUserLastName = function() {
   return cookies.get('userLastName');

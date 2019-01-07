@@ -9,7 +9,7 @@ import { Redirect } from 'react-router'
 export default class Login extends Component {
 
   state = {
-    userID: '',
+
     email: '',
     password: '',
     first_name: '',
@@ -47,9 +47,9 @@ export default class Login extends Component {
 
 
   setUser = (data) => {
-    this.props.setUserFirstName(this.state.first_name);
-    this.props.setUserLastName(this.state.last_name);
-    this.props.setUserID(this.state.userID);
+    this.props.setUserFirstName(data.data.token2);
+    // this.props.setUserLastName(this.state.last_name);
+    this.props.setUserID(data.data.token);
     this.setState({redirect:true});
 
   }
@@ -59,33 +59,27 @@ export default class Login extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const { email, password } = this.state;
-    let emailArr = [];
-    let hash;
 
-    axios.get('/login').then((data) => {
-      data.data.forEach(obj => {
-        emailArr.push(obj.email)
-        if(email === obj.email){
-          hash = obj.password
-          bcrypt.compare(password, hash, (err, res) => {
-            if(res) {
-              this.setState({
-                first_name: obj.first_name,
-                last_name: obj.last_name,
-                userID: obj.id
-              })
-              this.setUser(data)
-            } else {
-              alert("WRONG PASSWORD");
-            }
-          })
-        }
+    axios.post('/login', { email: email, password: password})
+    .then(data => {
+      console.log(data)
+      data.data.user.forEach(obj => {
+        this.setState({
+          first_name: obj.first_name,
+          last_name: obj.last_name,
+        })
+        this.setUser(data)
+      })
     })
-    if(emailArr.indexOf(email) === -1){
-      alert("WRONG EMAIL")
-    }
-  })
+    .catch(error => {
+      if(error){
+        alert("wrong email or password")
+      }
+    });
 }
+
+
+
 
   render(){
   const { redirect } = this.state;

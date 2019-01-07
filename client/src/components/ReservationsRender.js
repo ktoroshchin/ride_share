@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from 'axios';
 import SingleReservationRender from './SingleReservationRender';
 
+
 class ReservationsRender extends Component {
   state = {
     reservations: [],
@@ -10,7 +11,8 @@ class ReservationsRender extends Component {
   };
 
   componentDidMount(){
-    let id = this.state.driverID;
+    var idObj = this.state.driverID;
+    var id = idObj.id
     axios.get('/admin/'+id).then(response => {
       this.setState({
         reservations: response.data.filter(driver => driver)

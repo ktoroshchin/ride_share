@@ -11,6 +11,7 @@ import {
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
+
 class NavBar extends Component {
 
   state = {
@@ -28,9 +29,9 @@ class NavBar extends Component {
 
 
   render(){
-    const username = this.props.getUserName();
+    var username = this.props.getUserName()
 
-    if(username === undefined){
+    if(username === null){
     return(
     <div className="top-nav">
       <Navbar className="navbar" dark expand="md">
@@ -58,7 +59,7 @@ class NavBar extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <span className="greeting">Hello, {username}</span>
+                  <span className="greeting">Hello, {username.first_name}</span>
                   <NavLink className="nav-link" to="/my-reservations">RESERVATIONS</NavLink>
                 </NavItem>
                 <NavItem  onClick={this.props.deleteUser}>
