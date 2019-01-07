@@ -2,7 +2,6 @@
 /*jshint esversion: 6 */
 import React, { Component } from "react";
 import axios from 'axios';
-import bcrypt from 'bcryptjs';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
 import { Redirect } from 'react-router'
 
@@ -47,7 +46,6 @@ export default class Login extends Component {
 
   setUser = (data) => {
     this.props.setUserFirstName(data.data.token2);
-    // this.props.setUserLastName(this.state.last_name);
     this.props.setUserID(data.data.token);
     this.setState({redirect:true});
 
@@ -61,7 +59,6 @@ export default class Login extends Component {
 
     axios.post('/login', { email: email, password: password})
     .then(data => {
-      console.log(data)
       data.data.user.forEach(obj => {
         this.setState({
           first_name: obj.first_name,

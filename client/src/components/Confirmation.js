@@ -11,8 +11,6 @@ const ColoredLine = ({ color }) => (
     />
 );
 
-
-
 class Confirmation extends Component {
 
   state= {

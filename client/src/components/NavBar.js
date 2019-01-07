@@ -30,7 +30,6 @@ class NavBar extends Component {
 
   render(){
     var username = this.props.getUserName()
-    console.log(username)
 
     if(username === null){
     return(

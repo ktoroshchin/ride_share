@@ -86,7 +86,6 @@ export default class Register extends Component {
 
     setUser = (data) => {
         this.props.setUserFirstName(data.data.token2);
-        // this.props.setUserLastName(this.state.last_name);
         this.props.setUserID(data.data.token);
         this.setState({redirect:true});
     }
@@ -106,7 +105,6 @@ export default class Register extends Component {
             })
             axios.post('/register', { email: email, password: hash, first_name: first_name, last_name: last_name,
             vehicle_type: vehicle_type }).then(data => {
-              console.log(data)
               this.setUser(data)
             })
             .catch(error => {
