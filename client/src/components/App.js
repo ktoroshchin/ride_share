@@ -11,9 +11,9 @@ import Register from './Register'
 import Login from './Login'
 import Confirmation from './Confirmation'
 import NavBar from './NavBar'
+import DriverList from './DriverList';
 import decode from 'jwt-decode';
 import jsonwebtoken from 'jsonwebtoken'
-import DriverList from './DriverList';
 var jwt = require('jsonwebtoken');
 
 

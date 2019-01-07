@@ -9,7 +9,6 @@ import { Redirect } from 'react-router'
 export default class Login extends Component {
 
   state = {
-
     email: '',
     password: '',
     first_name: '',

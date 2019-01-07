@@ -3,8 +3,8 @@
 const express = require('express');
 const router = express.Router();
 var bcrypt = require('bcryptjs');
-const JWT_SECRET = 'rideshare';
-const JWT_SECRET2 = 'ridesshare';
+const JWT_SECRET = process.env.SECRET;
+const JWT_SECRET2 = process.env.SECRET2;
 
 var jwt = require('jsonwebtoken');
 
@@ -28,7 +28,7 @@ module.exports = (knex) => {
         }
       })
       .catch(err => res.sendStatus(404));
-      });
+  });
   return router;
-  };
+};
 

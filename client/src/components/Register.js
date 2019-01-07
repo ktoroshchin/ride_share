@@ -85,9 +85,9 @@ export default class Register extends Component {
     }
 
     setUser = (data) => {
-        // this.props.setUserFirstName(this.state.first_name);
-        this.props.setUserLastName(this.state.last_name);
-        // this.props.setUserID(data.data.token);
+        this.props.setUserFirstName(data.data.token2);
+        // this.props.setUserLastName(this.state.last_name);
+        this.props.setUserID(data.data.token);
         this.setState({redirect:true});
     }
 
@@ -101,7 +101,6 @@ export default class Register extends Component {
       } else {
         bcrypt.genSalt(10, (err, salt) => {
           bcrypt.hash(password, salt, (err, hash) => {
-
             this.setState({
               password: hash
             })
@@ -109,7 +108,13 @@ export default class Register extends Component {
             vehicle_type: vehicle_type }).then(data => {
               console.log(data)
               this.setUser(data)
-            });
+            })
+            .catch(error => {
+              if(error){
+                console.log(error)
+                alert("Please fill in required fields")
+              }
+            })
           });
         });
       }
