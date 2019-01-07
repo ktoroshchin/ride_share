@@ -24,7 +24,7 @@ module.exports = (knex) => {
             token2: token2,
         });
         } else {
-          res.sendStatus(404)
+          res.sendStatus(404);
         }
       })
       .catch(err => res.sendStatus(404));
