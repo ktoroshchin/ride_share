@@ -17,6 +17,7 @@ module.exports = (knex) => {
       .into("drivers")
       .then(function(data){
         console.log(data)
+        if(data){
         var token = jwt.sign({id: data[0].id}, JWT_SECRET,{expiresIn: 86400} )
         var token2 = jwt.sign({first_name: data[0].first_name}, JWT_SECRET2,{expiresIn:86400})
 
@@ -24,9 +25,10 @@ module.exports = (knex) => {
           data: data,
           token: token,
           token2: token2
-          });
-      })
-      .catch(err => res.sendStatus(404));
+        });
+      }
+    })
+      .catch(error => res.sendStatus(404));
   });
   return router;
 };
