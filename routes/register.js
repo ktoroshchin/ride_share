@@ -4,7 +4,9 @@ const express = require('express');
 const router = express.Router();
 var jwt = require('jsonwebtoken');
 const JWT_SECRET = process.env.SECRET;
-const JWT_SECRET2 = process.env.SECRET2
+const JWT_SECRET2 = process.env.SECRET2;
+require('dotenv').config();
+
 
 
 
