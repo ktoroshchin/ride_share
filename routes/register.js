@@ -18,7 +18,6 @@ module.exports = (knex) => {
       .returning("*")
       .into("drivers")
       .then(function(data){
-        console.log(data)
         if(data){
         var token = jwt.sign({id: data[0].id}, JWT_SECRET,{expiresIn: 86400} )
         var token2 = jwt.sign({first_name: data[0].first_name}, JWT_SECRET2,{expiresIn:86400})
