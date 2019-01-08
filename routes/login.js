@@ -19,7 +19,7 @@ module.exports = (knex) => {
       .then(function(foundUser){
         if(foundUser[0].email && bcrypt.compareSync(req.body.password, foundUser[0].password) ){
           var token = jwt.sign({id: foundUser[0].id}, JWT_SECRET,{expiresIn: 86400})
-          var token2 = jwt.sign({first_name: foundUser[0].first_name}, JWT_SECRET,{expiresIn:86400})
+          var token2 = jwt.sign({first_name: foundUser[0].first_name}, JWT_SECRET2,{expiresIn:86400})
           res.json({
             user: foundUser,
             token: token,
