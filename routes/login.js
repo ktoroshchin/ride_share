@@ -3,8 +3,8 @@
 const express = require('express');
 const router = express.Router();
 var bcrypt = require('bcryptjs');
-const JWT_SECRET = process.env.SECRET;
-const JWT_SECRET2 = process.env.SECRET2;
+const JWT_SECRET = "rideshare"
+const JWT_SECRET2 = "ridesshare"
 require('dotenv').config();
 
 
