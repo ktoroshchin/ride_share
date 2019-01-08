@@ -3,8 +3,8 @@
 const express = require('express');
 const router = express.Router();
 var jwt = require('jsonwebtoken');
-const JWT_SECRET = "rideshare"
-const JWT_SECRET2 = "ridesshare"
+const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET2 = process.env.JWT_SECRET2;
 require('dotenv').config();
 
 
