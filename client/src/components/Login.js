@@ -17,31 +17,18 @@ export default class Login extends Component {
 
 
 
-  handleEmail = (event) => {
+  handleInputs = (event) => {
     const target = event.target;
     const name = target.name;
 
     if(target.value.trim() === '') {
-      this.setState({email: null});
+      this.setState({[name]: null});
     } else {
       this.setState({
         [name]: target.value
       });
     }
-  }
-
-  handlePassword = (event) => {
-    const target = event.target;
-    const name = target.name;
-
-    if(target.value.trim() === '') {
-      this.setState({password: null});
-    } else {
-      this.setState({
-        [name]: target.value
-      });
-    }
-  }
+  };
 
 
   setUser = (data) => {
@@ -49,7 +36,7 @@ export default class Login extends Component {
     this.props.setUserID(data.data.token);
     this.setState({redirect:true});
 
-  }
+  };
 
 
 
@@ -72,7 +59,7 @@ export default class Login extends Component {
         alert("wrong email or password")
       }
     });
-}
+};
 
 
 
@@ -90,13 +77,13 @@ export default class Login extends Component {
           <h3 className="login">Login</h3>
             <FormGroup>
               <Label for="exampleEmail">Email</Label>
-              <Input type="email" name="email" id="exampleEmail" placeholder=""
-              onChange={this.handleEmail}/>
+              <Input type="email" name="email" id="exampleEmail"
+              onChange={this.handleInputs}/>
             </FormGroup>
             <FormGroup>
               <Label for="examplePassword">Password</Label>
-              <Input type="password" name="password" id="examplePassword" placeholder=""
-              onChange={this.handlePassword}/>
+              <Input type="password" name="password" id="examplePassword"
+              onChange={this.handleInputs}/>
             </FormGroup>
             <button type="submit" className="btn submit-button">Submit</button>
             <a href="/" className="btn cancel-button">Cancel</a>

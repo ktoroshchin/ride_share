@@ -12,7 +12,6 @@ module.exports = (knex) => {
     const fullName = req.body.driver_name.split(" ");
     firstName += fullName[0];
     lastName += fullName[1];
-    console.log(lastName)
     knex("drivers")
     .where("first_name", `${firstName}`)
     .andWhere("last_name", `${lastName}`)
