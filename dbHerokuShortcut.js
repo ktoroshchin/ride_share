@@ -22,4 +22,4 @@ CREATE TABLE reservations(
     message varchar(250),
     driver_name NOT NULL varchar(250),
     driver_id integer,
-    created_at timestamp not null default CURRENT_TIMESTAMP);
+    created_at timestamp not null default CURRENT_TIMESTAMP)
