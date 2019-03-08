@@ -1,6 +1,5 @@
 node_modules/
 .env
 *.log
-knexfile.js
 .DS_Store
-.dbHerokuShortcut.js
+.dbHerokuShortcut
