@@ -21,4 +21,4 @@ CREATE TABLE drivers (
     password varchar(250),
     vehicle_type varchar(250),
     email varchar(250),
-    created_at timestamp without time zone default (now() at time zone 'utc’));
+    created_at timestamp without time zone default (now() at time zone 'utc’))
