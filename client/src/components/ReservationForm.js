@@ -141,10 +141,12 @@ export default class ReservationForm extends Component {
               <Input type="select" name="departure_time" id="departureTime"
                 onChange={this.onChangeItem}>
                 <option defaultValue></option>
-                <option>5:45</option>
-                <option>6:45</option>
+                <option>10am</option>
+                <option>1pm</option>
+                <option>4pm</option>
+                <option>7pm</option>
               </Input>
-              <span><h6 className="warning">(Choose only your drivers available time)</h6></span>
+              {/* <span><h6 className="warning">(Choose only your drivers available time)</h6></span> */}
             </FormGroup>
             <FormGroup>
               <Label for="phoneNumber">Phone Number</Label>

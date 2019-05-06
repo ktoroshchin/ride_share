@@ -37,8 +37,8 @@ class DriverList extends Component {
                  <ListGroupItem><span className="textPreFix">Driver Name</span>: Konstantin Toroshchin </ListGroupItem>
                  <ListGroupItem><span className="textPreFix">Pick-Up/Drop-Off in Ottawa</span>:<a className="a-link-driver-list" href="https://goo.gl/maps/8cYXKPBJyJx"> 153 Laurier Ave E, Ottawa, ON K1N 6N8</a></ListGroupItem>
                  <ListGroupItem><span className="textPreFix">Pick-Up/Drop-Off in Montreal</span>:<a className="a-link-driver-list" href="https://goo.gl/maps/as8Ye2Dabjx"> 4819 Av Van Horne Local 117a, Montreal, QC H3W 1J2</a></ListGroupItem>
-                 <ListGroupItem><span className="textPreFix">Departures time from OTTAWA</span>: 10am; 4pm; 9pm </ListGroupItem>
-                 <ListGroupItem><span className="textPreFix">Departure time from MONTREAL</span>: 1pm; 4pm; 6pm </ListGroupItem>
+                 <ListGroupItem><span className="textPreFix">Departures time from Montreal</span>: 1pm, 7pm</ListGroupItem>
+                 <ListGroupItem><span className="textPreFix">Departure time from Ottawa</span>:10am, 4pm</ListGroupItem>
                  <ListGroupItem><span className="textPreFix">Phone #</span>:<a className="a-link-driver-list" href="tel:+1(613)617-4482"  data-rel="external"> +1(613)617-4482</a></ListGroupItem>
                  <ListGroupItem><span className="textPreFix">Email</span>: k.toroshchin@gmail.com </ListGroupItem>
                  <ListGroupItem><span className="textPreFix">Price:</span> $20 </ListGroupItem>
